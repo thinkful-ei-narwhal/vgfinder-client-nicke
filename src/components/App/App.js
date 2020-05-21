@@ -5,7 +5,10 @@ import GamePage from '../../routes/GamePage/GamePage'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LoginPage from '../../routes/LoginPage/LoginPage'
+import WishlistPage from '../../routes/WishlistPage/WishlistPage'
+import ContributePage from '../../routes/ContributePage/ContributePage'
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
+import Footer from '../../components/Footer/Footer'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
 import './App.css'
 
@@ -32,14 +35,14 @@ class App extends Component {
               path={'/games/:gameId'}
               component={GamePage}
             />
-            {/* <PrivateRoute
+            <PrivateRoute
               path={'/wishlist/:userId'}
               component={WishlistPage}
-            /> */}
-            {/* <PrivateRoute
+            />
+            <PrivateRoute
               path={'/contribute'}
               component={ContributePage}
-            /> */}
+            />
             <PublicOnlyRoute
               path={'/login'}
               component={LoginPage}
@@ -52,6 +55,7 @@ class App extends Component {
               component={NotFoundPage}
             />
           </Switch>
+          <Footer />
         </main>
       </div>
     )

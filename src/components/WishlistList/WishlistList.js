@@ -10,7 +10,7 @@ export default class WishlistList extends Component {
   render() {
     const userWishlist = this.props.userWishlist
     return (
-      userWishlist.map((game,index) => <GameItem key={index} game={game} />)
+      userWishlist.map((game, index) => <GameItem key={index} game={game} />)
     )
   }
 }

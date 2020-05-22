@@ -20,7 +20,12 @@ export default class WishlistPage extends Component {
     WishlistApiService.getwishlistedGames(this.context.userId)
       .then(res => {
         this.wishListedGames = res;
-        this.setState({ loaded: true });
+        WishlistApiService.getAllWishlists()
+          .then(res => {
+            this.context.setUserWishlist(res.filter(wishlist => wishlist.user_id === this.context.userId));
+            this.setState({ loaded: true });
+          })
+          .catch(this.context.setError)
       })
       .catch(this.context.setError)
   }

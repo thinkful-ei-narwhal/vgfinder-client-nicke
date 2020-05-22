@@ -10,8 +10,8 @@ export default class GameItem extends Component {
     return (
       <div>
         <Link to={`/games/${this.props.game.id}`}><img src={this.props.game.image_url_box_art} width="300" alt="Logo" /></Link>
-        <br/>
-        <RemoveFromWishlistButton />
+        <br />
+        <RemoveFromWishlistButton gameId={this.props.game.id} />
         <p>
           Genre: {this.props.game.genre}
         </p>

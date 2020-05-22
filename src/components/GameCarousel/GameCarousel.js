@@ -3,6 +3,10 @@ import './GameCarousel.css'
 import { Link } from 'react-router-dom'
 
 export default class GamesCarousel extends Component {
+  static defaultProps = {
+    reel: [],
+    isSingleGame: true
+  }
 
   state = {
     hero_url: "",

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders a form.Footer by default 1`] = `
+<footer
+  className="contact"
+  id="anchor3"
+>
+  <h2
+    className="contact-color"
+  >
+    Contact
+  </h2>
+  <address>
+    <a
+      aria-label="Github logo and link"
+      className="fab fa-github-square font-awesome"
+      href="https://github.com/UncleEnzo"
+      rel="noopener noreferrer"
+      target="_blank"
+    />
+    <a
+      aria-label="Email logo and mailto link"
+      className="fas fa-envelope-square font-awesome"
+      href="mailto:nevelson92@gmail.com"
+      rel="noopener noreferrer"
+      target="_blank"
+    />
+    <a
+      aria-label="Linkedin logo and link"
+      className="fab fa-linkedin font-awesome"
+      href="https://www.linkedin.com/in/nicholas-evelson-0b098246"
+      rel="noopener noreferrer"
+      target="_blank"
+    />
+  </address>
+</footer>
+`;

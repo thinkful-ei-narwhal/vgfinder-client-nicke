@@ -42,7 +42,7 @@ export default class GamesHomePage extends Component {
       <Section className='GamesListPage'>
         <h2>{activeGame.title}</h2>
         {error ? <p className='red'>There was an error, try again</p>
-         : <GamesCarousel reel={reel} isSingleGame={false} setActiveGame={this.setActiveGame} />}
+          : <GamesCarousel reel={reel} isSingleGame={false} setActiveGame={this.setActiveGame} />}
         <GameInfo game={activeGame} />
       </Section>
     </>

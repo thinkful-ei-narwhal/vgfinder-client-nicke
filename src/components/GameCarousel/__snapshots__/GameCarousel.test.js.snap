@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameCarousel component renders the NotefulForm given GamePage props 1`] = `
+<Fragment>
+  <div>
+    <img
+      alt="Logo"
+      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+      width="500"
+    />
+  </div>
+  <div>
+    <img
+      alt="Logo"
+      key="0"
+      onClick={[Function]}
+      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+      width="100"
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`GameCarousel component renders the NotefulForm given GamesHomePage props 1`] = `
+<Fragment>
+  <div>
+    <Link
+      to="/games/2"
+    >
+      <img
+        alt="Logo"
+        src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+        width="500"
+      />
+    </Link>
+  </div>
+  <div>
+    <img
+      alt="Logo"
+      key="0"
+      onClick={[Function]}
+      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+      width="100"
+    />
+    <img
+      alt="Logo"
+      key="1"
+      onClick={[Function]}
+      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+      width="100"
+    />
+  </div>
+</Fragment>
+`;

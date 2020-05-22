@@ -1,0 +1,1 @@
+import './RemoveFromWishlistButton.css'

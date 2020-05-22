@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
+import jwtDecode from 'jwt-decode';
 import './Header.css'
 
 export default class Header extends Component {
@@ -36,6 +37,15 @@ export default class Header extends Component {
   }
 
   render() {
+    const jwtToken = TokenService.getAuthToken();
+    let user_id;
+    if (jwtToken) {
+      //need to make this an If
+      const decodedToken = jwtDecode(jwtToken);
+      user_id = decodedToken.user_id;
+    }
+
+
     return <>
       {/* ToDo: 
         Stylize 
@@ -46,7 +56,7 @@ export default class Header extends Component {
         <nav className="topnav">
           <Link className={this.renderActivePage('/')} to='/'> Home</Link>
           {/* {<Link className={this.renderActivePage('/search')} to='/search'>Search</Link>} */}
-          <Link className={this.renderActivePage('/wishlist')} to='/wishlist'>Wishlist</Link>
+          <Link className={this.renderActivePage(`/wishlist/${user_id}`)} to={`/wishlist/${user_id}`}>Wishlist</Link>
           <Link className={this.renderActivePage('/contribute')} to='/contribute'>Contribute</Link>
           {/* {<Link className={this.renderActivePage('/preferences')} to='/preferences'>Preferences</Link>} */}
           {/* {<Link className={this.renderActivePage('/admin')} to='/admin'>(Admin))</Link>} */}

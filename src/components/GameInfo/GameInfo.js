@@ -5,7 +5,8 @@ export default class GameInfo extends Component {
   render() {
     function myDateParse(d) {
       const date = new Date(d);
-      return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString(window.navigator.languages[0], options);
     }
     const { description, genre, rating, release_date, developer } = this.props.game;
 

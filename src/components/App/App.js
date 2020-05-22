@@ -7,20 +7,37 @@ import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import WishlistPage from '../../routes/WishlistPage/WishlistPage'
 import ContributePage from '../../routes/ContributePage/ContributePage'
+import UserIdContext from '../../contexts/UserIdContext';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
 import Footer from '../../components/Footer/Footer'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import jwtDecode from 'jwt-decode';
+import TokenService from '../../services/token-service'
 import './App.css'
 
 class App extends Component {
-  state = { hasError: false }
+  static contextType = UserIdContext;
+
+  state = {
+    loaded: false,
+    hasError: false
+  }
 
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
   }
 
-  render() {
+  componentDidMount() {
+    const jwtToken = TokenService.getAuthToken();
+    if (jwtToken) {
+      const decoded = jwtDecode(jwtToken);
+      this.context.setUserId(decoded.user_id);
+    }
+    this.setState({ loaded: true })
+  }
+
+  renderApp() {
     return (
       <div className='App'>
         <main className='App__main'>
@@ -36,7 +53,7 @@ class App extends Component {
               component={GamePage}
             />
             <PrivateRoute
-              path={'/wishlist/:userId'}
+              path={'/wishlist'}
               component={WishlistPage}
             />
             <PrivateRoute
@@ -58,6 +75,14 @@ class App extends Component {
           <Footer />
         </main>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      <>
+        {this.state.loaded ? this.renderApp() : null}
+      </>
     )
   }
 }

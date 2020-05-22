@@ -14,34 +14,21 @@ const WishlistApiService = {
           : res.json()
       )
   },
-  // addToWishlist(title, description, genre, rating, release_date, developer, trailer_url, image_url_box_art, image_url_two, image_url_three, image_url_four, image_url_five) {
-  //   return fetch(`${config.API_ENDPOINT}/games`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //       'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-  //     },
-  //     body: JSON.stringify({
-  //       title,
-  //       description,
-  //       genre,
-  //       rating,
-  //       release_date,
-  //       developer,
-  //       trailer_url,
-  //       image_url_box_art,
-  //       image_url_two,
-  //       image_url_three,
-  //       image_url_four,
-  //       image_url_five
-  //     }),
-  //   })
-  //     .then(res =>
-  //       (!res.ok)
-  //         ? res.json().then(e => Promise.reject(e))
-  //         : res.json()
-  //     )
-  // },
+  addToWishlist(userId, game_id) {
+    return fetch(`${config.API_ENDPOINT}/wishlists/users/${userId}`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({ game_id }),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
   // removeFromWishlist(id) {
   //   return fetch(`${config.API_ENDPOINT}/games/${id}`, {
   //     method: 'DELETE',

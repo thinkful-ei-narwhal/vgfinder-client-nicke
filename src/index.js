@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { GamesListProvider } from './contexts/GamesListContext'
 import { GameProvider } from './contexts/GameContext'
+import { UserIdContextProvider } from './contexts/UserIdContext'
 import App from './components/App/App'
 import './index.css'
-
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons'
 
 import {
@@ -36,11 +36,13 @@ library.add(
 
 ReactDOM.render(
   <BrowserRouter>
-    <GamesListProvider>
-      <GameProvider>
-        <App />
-      </GameProvider>
-    </GamesListProvider>
+    <UserIdContextProvider>
+      <GamesListProvider>
+        <GameProvider>
+          <App />
+        </GameProvider>
+      </GamesListProvider>
+    </UserIdContextProvider>
   </BrowserRouter>,
   document.getElementById('root')
 )

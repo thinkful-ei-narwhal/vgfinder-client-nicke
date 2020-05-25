@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders a Header component with supplied props 1`] = `
+<Fragment>
+  <header
+    className="App__header"
+  >
+    <h1>
+      IndieVG
+    </h1>
+    <nav
+      className="topnav"
+    >
+      <Link
+        className="active"
+        to="/homepage"
+      >
+         Home
+      </Link>
+      <Link
+        className=""
+        to="/search"
+      >
+        Search
+      </Link>
+      <Link
+        className=""
+        to="/wishlist"
+      >
+        Wishlist
+      </Link>
+      <Link
+        className=""
+        to="/contribute"
+      >
+        Contribute
+      </Link>
+      <div>
+        <Link
+          className=""
+          to="/login"
+        >
+          Log in
+        </Link>
+      </div>
+    </nav>
+  </header>
+</Fragment>
+`;
+
+exports[`Header component renders a Header component without supplied props 1`] = `
+<Fragment>
+  <header
+    className="App__header"
+  >
+    <h1>
+      IndieVG
+    </h1>
+    <nav
+      className="topnav"
+    >
+      <Link
+        className=""
+        to="/homepage"
+      >
+         Home
+      </Link>
+      <Link
+        className=""
+        to="/search"
+      >
+        Search
+      </Link>
+      <Link
+        className=""
+        to="/wishlist"
+      >
+        Wishlist
+      </Link>
+      <Link
+        className=""
+        to="/contribute"
+      >
+        Contribute
+      </Link>
+      <div>
+        <Link
+          className=""
+          to="/login"
+        >
+          Log in
+        </Link>
+      </div>
+    </nav>
+  </header>
+</Fragment>
+`;

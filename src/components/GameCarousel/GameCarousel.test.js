@@ -12,7 +12,7 @@ describe(`GameCarousel component`, () => {
       },
       {
         imgUrl: "https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500",
-        gameId: "2"
+        gameId: "3"
       }
     ],
     isSingleGame: false,
@@ -32,13 +32,14 @@ describe(`GameCarousel component`, () => {
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
-  it('renders the NotefulForm given GamesHomePage props', () => {
-    const wrapper = shallow(<GameCarousel {...propsGamesHomePage} />)
+  it('renders the GameCarousel given GamesHomePage props', () => {
+
+    const wrapper = shallow(<GameCarousel reel={propsGamesHomePage.reel} isSingleGame={propsGamesHomePage.isSingleGame} setActiveGame={propsGamesHomePage.setActiveGame} />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 
-  it('renders the NotefulForm given GamePage props', () => {
-    const wrapper = shallow(<GameCarousel {...propsGamePage} />)
+  it('renders the GameCarousel given GamePage props', () => {
+    const wrapper = shallow(<GameCarousel reel={propsGamePage.reel} isSingleGame={propsGamePage.isSingleGame} />)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 })

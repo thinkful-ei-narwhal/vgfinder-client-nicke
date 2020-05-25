@@ -62,24 +62,12 @@ const GamesApiService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`,
       }
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then(res => {
+        if (!res.ok) {
+          res.json().then(e => Promise.reject(e))
+        }
+      })
   }
-  // getThingReviews(thingId) {
-  //   return fetch(`${config.API_ENDPOINT}/things/${thingId}/reviews`, {
-  //     headers: {
-  //       'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-  //     },
-  //   })
-  //     .then(res =>
-  //       (!res.ok)
-  //         ? res.json().then(e => Promise.reject(e))
-  //         : res.json()
-  //     )
-  // },
 }
 
 export default GamesApiService

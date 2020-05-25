@@ -23,10 +23,6 @@ export default class Header extends Component {
           to='/login'>
           Log in
         </Link>
-        <Link
-          className={this.renderActivePage('/register')} to='/register'>
-          Register
-        </Link>
       </div>
     )
   }
@@ -37,19 +33,13 @@ export default class Header extends Component {
 
   render() {
     return <>
-      {/* ToDo: 
-        Stylize 
-        Move login/register to right side
-     */}
       <header className='App__header'>
         <h1>IndieVG</h1>
         <nav className="topnav">
-          <Link className={this.renderActivePage('/')} to='/'> Home</Link>
-          {/* {<Link className={this.renderActivePage('/search')} to='/search'>Search</Link>} */}
+          <Link className={this.renderActivePage('/homepage')} to='/homepage'> Home</Link>
+          <Link className={this.renderActivePage('/search')} to='/search'>Search</Link>
           <Link className={this.renderActivePage(`/wishlist`)} to={`/wishlist`}>Wishlist</Link>
           <Link className={this.renderActivePage('/contribute')} to='/contribute'>Contribute</Link>
-          {/* {<Link className={this.renderActivePage('/preferences')} to='/preferences'>Preferences</Link>} */}
-          {/* {<Link className={this.renderActivePage('/admin')} to='/admin'>(Admin))</Link>} */}
           {TokenService.hasAuthToken() ? this.renderLogoutLink() : this.renderLoginLink()}
         </nav>
       </header>

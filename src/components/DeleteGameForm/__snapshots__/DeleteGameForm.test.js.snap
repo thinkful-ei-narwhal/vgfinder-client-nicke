@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteGameForm component renders a form.DeleteGameForm by default 1`] = `
+<form
+  className="DeleteForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="title"
+  >
+    <label
+      htmlFor="DeleteGameForm_title"
+    >
+      Title
+    </label>
+    <input
+      id="DeleteGameForm_title"
+      name="title"
+      onChange={[Function]}
+      required={true}
+      value=""
+    />
+  </div>
+  <button
+    disabled={true}
+    type="submit"
+  >
+    Delete Game
+  </button>
+</form>
+`;

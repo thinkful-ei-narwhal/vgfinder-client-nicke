@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Input } from '../Utils/Utils';
-import GamesApiService from './../../services/games-api-service'
+import GamesApiService from './../../services/games-api-service';
 import GamesListContext from '../../contexts/GamesListContext';
+import Alert from './../Alert/Alert'
 import './DeleteGameForm.css'
 
 export default class DeleteGameForm extends Component {
@@ -13,48 +14,50 @@ export default class DeleteGameForm extends Component {
 
   static contextType = GamesListContext;
 
-  handleGameExistsChange = (e) => {
+  handleErrorClick = () => {
+    this.setState({ error: null });
+  }
+
+  handleGameExistsChange = (e, gamesList) => {
     this.setState({
       deleteTitle: e.target.value,
-      deleteEnabled: this.gameTitles.find(gameTitle => gameTitle.toLowerCase() === e.target.value.toLowerCase())
+      deleteEnabled: gamesList.find(game => game.title.toLowerCase() === e.target.value.toLowerCase())
     });
   }
 
-  handleSubmitGameDelete = ev => {
+  handleSubmitGameDelete = (ev, gamesList) => {
     ev.preventDefault()
     this.setState({ error: null });
 
-    GamesApiService.deleteGame(this.context.gamesList.find(game => game.title.toLowerCase() === this.state.deleteTitle.toLowerCase()).id)
+    GamesApiService.deleteGame(gamesList.find(game => game.title.toLowerCase() === this.state.deleteTitle.toLowerCase()).id)
       .then(res => {
-        //Figure out what you want to do with the response
-        //probably show a success and push history back to '/'
+        const updatedgamesList = this.context.gamesList.filter(game => game.title.toLowerCase() !== this.state.deleteTitle.toLowerCase());
+        this.setState({ error: `The game: ${this.state.deleteTitle} has been deleted!`, deleteTitle: '', deleteEnabled: false })
+        this.context.setGamesList(updatedgamesList);
       })
-      .catch(res => {
-        this.setState({ error: res.error })
+      .catch(err => {
+        this.setState({ error: err.message })
       })
-  }
-
-  componentDidMount() {
-    this.gameTitles = this.context.gamesList.map(game => game.title);
   }
 
   render() {
     const { error } = this.state
+    const gamesList = this.context.gamesList;
     return (
-      <form className='DeleteForm' onSubmit={this.handleSubmitGameDelete}>
+      <form className='DeleteForm' onSubmit={(e) => this.handleSubmitGameDelete(e,gamesList)}>
         <div role='alert'>
-          {error && <p className='red'>{error}</p>}
+          {error && <Alert message={error} handleErrorClick={this.handleErrorClick} />}
         </div>
         <div className='title'>
           <label htmlFor='DeleteGameForm_title'>
             Title
           </label>
-          <Input required name='title' id='DeleteGameForm_title' value={this.state.deleteTitle} onChange={this.handleGameExistsChange}></Input>
+          <input required name='title' id='DeleteGameForm_title' value={this.state.deleteTitle} onChange={(e) => this.handleGameExistsChange(e,gamesList)}></input>
         </div>
 
-        <Button type='submit' disabled={!this.state.deleteEnabled}>
+        <button type='submit' disabled={!this.state.deleteEnabled}>
           Delete Game
-        </Button>
+        </button>
       </form>
     )
   }

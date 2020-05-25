@@ -3,8 +3,10 @@ import React, { Component } from 'react'
 const UserIdContext = React.createContext({
   userId: undefined,
   wishlist: [],
+  userGames: [],
   setUserId: () => { },
   setUserWishlist: () => { },
+  setUserIdWishlistAndGames: () => { }
 })
 
 export default UserIdContext
@@ -12,15 +14,16 @@ export default UserIdContext
 export class UserIdContextProvider extends Component {
   state = {
     userId: undefined,
-    wishlist: []
+    wishlist: [],
+    userGames: [],
   };
 
   setUserId = (userId) => {
     this.setState({ userId })
   }
 
-  setUserWishlist = (wishlist) => {
-    this.setState({ wishlist })
+  setUserIdWishlistAndGames = (userId, wishlist, userGames) => {
+    this.setState({ userId, wishlist, userGames })
   }
 
 
@@ -28,8 +31,9 @@ export class UserIdContextProvider extends Component {
     const value = {
       userId: this.state.userId,
       wishlist: this.state.wishlist,
+      userGames: this.state.userGames,
       setUserId: this.setUserId,
-      setUserWishlist: this.setUserWishlist
+      setUserIdWishlistAndGames: this.setUserIdWishlistAndGames
     }
 
     return (

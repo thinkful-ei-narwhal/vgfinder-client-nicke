@@ -7,6 +7,8 @@ import GamesCarousel from '../../components/GameCarousel/GameCarousel';
 import GameContext from '../../contexts/GameContext'
 import GameInfo from '../../components/GameInfo/GameInfo';
 import YouTube from 'react-youtube';
+import AddToWishlist from '../../components/AddToWishlist/AddToWishlist';
+import TokenService from '../../services/token-service'
 
 export default class GamesHomePage extends Component {
   static contextType = GameContext;
@@ -66,6 +68,7 @@ export default class GamesHomePage extends Component {
         <h2>{this.context.game.title}</h2>
         {error ? <p className='red'>There was an error, try again</p> : <GamesCarousel reel={reel} isSingleGame={true} />}
         <GameInfo game={this.context.game} />
+        {TokenService.hasAuthToken() ? <AddToWishlist game={this.context.game} /> : <p>Sign in to add game to wishlist!</p>}
       </Section>
       <Section>
         <h2>Trailer</h2>

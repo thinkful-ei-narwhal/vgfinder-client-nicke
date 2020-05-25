@@ -6,7 +6,8 @@ import Header from './../../components/Header/Header';
 import './GamesHomePage.css'
 import GameInfo from '../../components/GameInfo/GameInfo';
 import GamesCarousel from '../../components/GameCarousel/GameCarousel';
-import AddToWishlist from '../../components/AddToWishlist/AddToWishlist'
+import AddToWishlist from '../../components/AddToWishlist/AddToWishlist';
+import TokenService from '../../services/token-service'
 
 export default class GamesHomePage extends Component {
   static contextType = GamesListContext;
@@ -46,8 +47,7 @@ export default class GamesHomePage extends Component {
           : <GamesCarousel reel={reel} isSingleGame={false} setActiveGame={this.setActiveGame} />}
         <GameInfo game={activeGame} />
       </Section>
-      {}
-      <AddToWishlist />
+      {TokenService.hasAuthToken() ? <AddToWishlist game={activeGame} /> : <p>Sign in to add game to wishlist!</p>}
     </>
   }
 

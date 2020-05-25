@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import GamesHomePage from '../../routes/GamesHomePage/GamesHomePage'
-import GamePage from '../../routes/GamePage/GamePage'
-import PrivateRoute from '../Utils/PrivateRoute'
-import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
-import LoginPage from '../../routes/LoginPage/LoginPage'
-import WishlistPage from '../../routes/WishlistPage/WishlistPage'
-import ContributePage from '../../routes/ContributePage/ContributePage'
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import GamesHomePage from '../../routes/GamesHomePage/GamesHomePage';
+import GamePage from '../../routes/GamePage/GamePage';
+import PrivateRoute from '../Utils/PrivateRoute';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import LoginPage from '../../routes/LoginPage/LoginPage';
+import WishlistPage from '../../routes/WishlistPage/WishlistPage';
+import ContributePage from '../../routes/ContributePage/ContributePage';
 import UserIdContext from '../../contexts/UserIdContext';
-import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage'
-import Footer from '../../components/Footer/Footer'
-import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
+import LandingPage from '../../routes/LandingPage/LandingPage';
+import Footer from '../../components/Footer/Footer';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import jwtDecode from 'jwt-decode';
-import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service';
+import WishlistApiService from '../../services/wishlist-api-service';
+import SearchPage from '../../routes/SearchPage/SearchPage';
 import './App.css'
 
 class App extends Component {
@@ -29,12 +31,37 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //if the authentication token is provided, set the state of the user wishlist
     const jwtToken = TokenService.getAuthToken();
     if (jwtToken) {
       const decoded = jwtDecode(jwtToken);
-      this.context.setUserId(decoded.user_id);
+      const userId = decoded.user_id;
+
+      let userWishlist = [];
+      let userGamesList = [];
+
+      //get all wishlists for user
+      const wishlistPromise1 = WishlistApiService.getAllWishlists()
+        .then(res => {
+          userWishlist = res.filter(wishlist => wishlist.user_id === userId);
+        })
+        .catch(this.context.setError)
+
+      //get all wishlisted game data
+      const wishlistPromise2 = WishlistApiService.getwishlistedGames(userId)
+        .then(res => {
+          userGamesList = res;
+        })
+        .catch(this.context.setError)
+
+      Promise.all([wishlistPromise1, wishlistPromise2]).then(() => {
+        this.context.setUserIdWishlistAndGames(userId, userWishlist, userGamesList);
+        this.setState({ loaded: true })
+      });
     }
-    this.setState({ loaded: true })
+    else {
+      this.setState({ loaded: true })
+    }
   }
 
   renderApp() {
@@ -46,7 +73,17 @@ class App extends Component {
             <Route
               exact
               path={'/'}
+              component={LandingPage}
+            />
+            <Route
+              exact
+              path={'/homepage'}
               component={GamesHomePage}
+            />
+            <Route
+              exact
+              path={'/search'}
+              component={SearchPage}
             />
             <PrivateRoute
               path={'/games/:gameId'}
@@ -64,10 +101,6 @@ class App extends Component {
               path={'/login'}
               component={LoginPage}
             />
-            {/* <PublicOnlyRoute
-              path={'/register'}
-              component={RegistrationPage}
-            /> */}
             <Route
               component={NotFoundPage}
             />

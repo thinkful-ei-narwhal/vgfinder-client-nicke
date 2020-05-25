@@ -2,9 +2,9 @@ import './WishlistPage.css'
 import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
 import { Section } from '../../components/Utils/Utils'
-import WishlistApiService from '../../services/wishlist-api-service';
 import UserIdContext from '../../contexts/UserIdContext';
-import WishlistList from '../../components/WishlistList/WishlistList'
+import Search from '../../components/Search/Search'
+import WishlistApiService from '../../services/wishlist-api-service';
 
 export default class WishlistPage extends Component {
   static contextType = UserIdContext;
@@ -17,26 +17,34 @@ export default class WishlistPage extends Component {
   }
 
   componentDidMount() {
-    WishlistApiService.getwishlistedGames(this.context.userId)
+    const userId = this.context.userId
+    let userWishlist = [];
+    let userGamesList = [];
+
+    //get all wishlists for user
+    const wishlistPromise1 = WishlistApiService.getAllWishlists()
       .then(res => {
-        this.wishListedGames = res;
-        WishlistApiService.getAllWishlists()
-          .then(res => {
-            this.context.setUserWishlist(res.filter(wishlist => wishlist.user_id === this.context.userId));
-            this.setState({ loaded: true });
-          })
-          .catch(this.context.setError)
+        userWishlist = res.filter(wishlist => wishlist.user_id === userId);
       })
       .catch(this.context.setError)
+
+    //get all wishlisted game data
+    const wishlistPromise2 = WishlistApiService.getwishlistedGames(userId)
+      .then(res => {
+        userGamesList = res;
+      })
+      .catch(this.context.setError)
+
+    Promise.all([wishlistPromise1, wishlistPromise2]).then(() => {
+      this.context.setUserIdWishlistAndGames(userId, userWishlist, userGamesList);
+      this.setState({ loaded: true })
+    });
   }
 
-  renderGame() {
-    // const { error } = this.context
+  renderWishlist() {
     return <>
-      <Header pathName={this.props.location.pathname} />
       <Section className='GamePage'>
-        < WishlistList userWishlist={this.wishListedGames} />
-        {/* Place the wishlist item component in here and map all of the wishlist games to it */}
+        <Search gamesList={this.context.userGames} />
       </Section>
     </>
   }
@@ -44,7 +52,8 @@ export default class WishlistPage extends Component {
   render() {
     return (
       <>
-        {this.state.loaded ? this.renderGame() : null}
+        <Header pathName={this.props.location.pathname} />
+        {this.state.loaded ? this.renderWishlist() : null}
       </>
     )
   }

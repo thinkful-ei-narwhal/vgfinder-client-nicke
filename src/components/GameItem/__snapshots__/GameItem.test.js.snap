@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameItem component renders a GameItem with supplied props 1`] = `
+<div>
+  <Link
+    to="/games/1"
+  >
+    <img
+      alt="Logo"
+      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+      width="300"
+    />
+  </Link>
+  <br />
+  <p>
+    Sign in to add game to wishlist!
+  </p>
+  <p>
+    Title: 
+    Hollow Knight
+  </p>
+  <p>
+    Genre: 
+    Adventure
+  </p>
+  <p>
+    Rating: 
+    4
+  </p>
+  <p>
+    Developer: 
+    Team Cherry
+  </p>
+</div>
+`;

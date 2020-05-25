@@ -6,8 +6,8 @@ import { GamesListProvider } from './contexts/GamesListContext'
 import { GameProvider } from './contexts/GameContext'
 import { UserIdContextProvider } from './contexts/UserIdContext'
 import App from './components/App/App'
-import './index.css'
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons'
+import './index.css'
 
 import {
   faBookOpen,

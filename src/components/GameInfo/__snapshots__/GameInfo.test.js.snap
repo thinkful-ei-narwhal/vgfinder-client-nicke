@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameInfo component renders a GameInfo with supplied props 1`] = `
+<Fragment>
+  <p />
+  <p>
+    Genre: 
+  </p>
+  <p>
+    Rating: 
+  </p>
+  <p>
+    Release Date: 
+    Invalid Date
+  </p>
+  <p>
+    Developer: 
+  </p>
+</Fragment>
+`;

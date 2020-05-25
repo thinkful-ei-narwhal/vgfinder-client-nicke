@@ -49,11 +49,11 @@ const WishlistApiService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`,
       }
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then(res => {
+        if (!res.ok) {
+          res.json().then(e => Promise.reject(e))
+        }
+      })
   }
 }
 

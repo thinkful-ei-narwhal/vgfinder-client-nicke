@@ -16,7 +16,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Title
     </label>
-    <Input
+    <input
       id="PostGameForm_title"
       name="title"
       required={true}
@@ -28,9 +28,9 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_description"
     >
-      description
+      Description
     </label>
-    <Textarea
+    <textarea
       id="PostGameForm_description"
       name="description"
       required={true}
@@ -122,7 +122,7 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_rating"
     >
-      rating
+      Rating
     </label>
     <Slider
       className="slider"
@@ -141,17 +141,127 @@ exports[`Post game component renders the complete form 1`] = `
     />
   </div>
   <div
-    className="release_date"
+    className="YearNavigation release_date"
   >
     <label
       htmlFor="PostGameForm_release_date"
     >
-      release date
+      Release Date
     </label>
-    <Input
+    <br />
+    <t
+      canChangeMonth={true}
+      captionElement={[Function]}
+      classNames={
+        Object {
+          "body": "DayPicker-Body",
+          "caption": "DayPicker-Caption",
+          "container": "DayPicker",
+          "day": "DayPicker-Day",
+          "disabled": "disabled",
+          "footer": "DayPicker-Footer",
+          "interactionDisabled": "DayPicker--interactionDisabled",
+          "month": "DayPicker-Month",
+          "months": "DayPicker-Months",
+          "navBar": "DayPicker-NavBar",
+          "navButtonInteractionDisabled": "DayPicker-NavButton--interactionDisabled",
+          "navButtonNext": "DayPicker-NavButton DayPicker-NavButton--next",
+          "navButtonPrev": "DayPicker-NavButton DayPicker-NavButton--prev",
+          "outside": "outside",
+          "selected": "selected",
+          "today": "today",
+          "todayButton": "DayPicker-TodayButton",
+          "week": "DayPicker-Week",
+          "weekNumber": "DayPicker-WeekNumber",
+          "weekday": "DayPicker-Weekday",
+          "weekdays": "DayPicker-Weekdays",
+          "weekdaysRow": "DayPicker-WeekdaysRow",
+          "wrapper": "DayPicker-wrapper",
+        }
+      }
+      enableOutsideDaysClick={true}
+      fixedWeeks={false}
+      fromMonth={1970-12-01T05:00:00.000Z}
       id="PostGameForm_release_date"
+      labels={
+        Object {
+          "nextMonth": "Next Month",
+          "previousMonth": "Previous Month",
+        }
+      }
+      locale="en"
+      localeUtils={
+        Object {
+          "default": Object {
+            "formatDay": [Function],
+            "formatMonthTitle": [Function],
+            "formatWeekdayLong": [Function],
+            "formatWeekdayShort": [Function],
+            "getFirstDayOfWeek": [Function],
+            "getMonths": [Function],
+          },
+          "formatDay": [Function],
+          "formatMonthTitle": [Function],
+          "formatWeekdayLong": [Function],
+          "formatWeekdayShort": [Function],
+          "getFirstDayOfWeek": [Function],
+          "getMonths": [Function],
+        }
+      }
       name="release_date"
-      required={true}
+      navbarElement={
+        <t
+          classNames={
+            Object {
+              "body": "DayPicker-Body",
+              "caption": "DayPicker-Caption",
+              "container": "DayPicker",
+              "day": "DayPicker-Day",
+              "disabled": "disabled",
+              "footer": "DayPicker-Footer",
+              "interactionDisabled": "DayPicker--interactionDisabled",
+              "month": "DayPicker-Month",
+              "months": "DayPicker-Months",
+              "navBar": "DayPicker-NavBar",
+              "navButtonInteractionDisabled": "DayPicker-NavButton--interactionDisabled",
+              "navButtonNext": "DayPicker-NavButton DayPicker-NavButton--next",
+              "navButtonPrev": "DayPicker-NavButton DayPicker-NavButton--prev",
+              "outside": "outside",
+              "selected": "selected",
+              "today": "today",
+              "todayButton": "DayPicker-TodayButton",
+              "week": "DayPicker-Week",
+              "weekNumber": "DayPicker-WeekNumber",
+              "weekday": "DayPicker-Weekday",
+              "weekdays": "DayPicker-Weekdays",
+              "weekdaysRow": "DayPicker-WeekdaysRow",
+              "wrapper": "DayPicker-wrapper",
+            }
+          }
+          dir="ltr"
+          labels={
+            Object {
+              "nextMonth": "Next Month",
+              "previousMonth": "Previous Month",
+            }
+          }
+          showNextButton={true}
+          showPreviousButton={true}
+        />
+      }
+      numberOfMonths={1}
+      onDayClick={[Function]}
+      pagedNavigation={false}
+      renderDay={[Function]}
+      renderWeek={[Function]}
+      reverseMonths={false}
+      selectedDays={null}
+      showOutsideDays={false}
+      showWeekDays={true}
+      showWeekNumbers={false}
+      tabIndex={0}
+      toMonth={2020-01-01T05:00:00.000Z}
+      weekdayElement={<t />}
     />
   </div>
   <div
@@ -160,9 +270,9 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_developer"
     >
-      developer
+      Developer
     </label>
-    <Input
+    <input
       id="PostGameForm_developer"
       name="developer"
       required={true}
@@ -174,9 +284,9 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_trailer_url"
     >
-      trailer youtube url
+      Trailer Youtube Url
     </label>
-    <Input
+    <input
       id="PostGameForm_trailer_url"
       name="trailer_url"
       required={true}
@@ -188,9 +298,9 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_image_url_box_art"
     >
-      cover art
+      Cover Art
     </label>
-    <Input
+    <input
       id="PostGameForm_image_url_box_art"
       name="image_url_box_art"
       required={true}
@@ -202,12 +312,11 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_image_url_two"
     >
-      screen shot 1
+      Screen Shot 1
     </label>
-    <Input
+    <input
       id="PostGameForm_image_url_two"
       name="image_url_two"
-      required={true}
     />
   </div>
   <div
@@ -216,12 +325,11 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_image_url_three"
     >
-      screen shot 2
+      Screen Shot 2
     </label>
-    <Input
+    <input
       id="PostGameForm_image_url_three"
       name="image_url_three"
-      required={true}
     />
   </div>
   <div
@@ -230,12 +338,11 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_image_url_four"
     >
-      screen shot 3
+      Screen Shot 3
     </label>
-    <Input
+    <input
       id="PostGameForm_image_url_four"
       name="image_url_four"
-      required={true}
     />
   </div>
   <div
@@ -244,18 +351,17 @@ exports[`Post game component renders the complete form 1`] = `
     <label
       htmlFor="PostGameForm_image_url_five"
     >
-      screen shot 4
+      Screen Shot 4
     </label>
-    <Input
+    <input
       id="PostGameForm_image_url_five"
       name="image_url_five"
-      required={true}
     />
   </div>
-  <Button
+  <button
     type="submit"
   >
     Submit Game
-  </Button>
+  </button>
 </form>
 `;

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Page component renders a Game Page component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "clearError": [Function],
+      "clearGame": [Function],
+      "error": null,
+      "game": Object {
+        "description": "",
+        "developer": "",
+        "genre": "",
+        "id": "",
+        "image_url_box_art": "",
+        "image_url_five": "",
+        "image_url_four": "",
+        "image_url_three": "",
+        "image_url_two": "",
+        "rating": "",
+        "release_date": "",
+        "title": "",
+        "trailer_url": "",
+      },
+      "setError": [Function],
+      "setGame": [Function],
+    }
+  }
+>
+  <GamesHomePage />
+</ContextProvider>
+`;

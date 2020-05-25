@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contribute Page component renders a Contribute Page component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "clearError": [Function],
+      "error": null,
+      "gamesList": Array [],
+      "setError": [Function],
+      "setGamesList": [Function],
+    }
+  }
+>
+  <ContributePage />
+</ContextProvider>
+`;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GameCarousel component renders the NotefulForm given GamePage props 1`] = `
+exports[`GameCarousel component renders the GameCarousel given GamePage props 1`] = `
 <Fragment>
   <div>
     <img
@@ -21,7 +21,7 @@ exports[`GameCarousel component renders the NotefulForm given GamePage props 1`]
 </Fragment>
 `;
 
-exports[`GameCarousel component renders the NotefulForm given GamesHomePage props 1`] = `
+exports[`GameCarousel component renders the GameCarousel given GamesHomePage props 1`] = `
 <Fragment>
   <div>
     <Link

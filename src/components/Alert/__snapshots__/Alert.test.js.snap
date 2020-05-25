@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert component renders an alert by default 1`] = `
+<ShowAlert
+  show="snackbar show"
+/>
+`;
+
+exports[`Alert component renders an alert with the correct message of the prop passed in 1`] = `
+<ShowAlert
+  message={
+    Object {
+      "error": "Test Error",
+    }
+  }
+  show="snackbar show"
+/>
+`;
+
+exports[`Alert component renders an alert with the correct message of the prop passed in, then executes the callback 1`] = `
+<ShowAlert
+  message={
+    Object {
+      "error": "Test Error",
+    }
+  }
+  show="snackbar show"
+/>
+`;

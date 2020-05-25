@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WishlistPage component renders a WishlistPage component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "setUserId": [Function],
+      "setUserIdWishlistAndGames": [Function],
+      "userGames": Array [],
+      "userId": undefined,
+      "wishlist": Array [],
+    }
+  }
+>
+  <WishlistPage />
+</ContextProvider>
+`;

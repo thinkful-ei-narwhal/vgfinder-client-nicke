@@ -7,34 +7,37 @@ export default class RemoveFromWishlistButton extends Component {
   //needs to know the user wishlist
   static contextType = UserIdContext;
 
+  removeFromArray(array, arrayItemToRemove) {
+    const index = array.indexOf(arrayItemToRemove);
+    if (index > -1) {
+      array.splice(index, 1);
+    }
+    return array;
+  }
+
   removeFromWishlist = () => {
     const userWishlist = this.context.wishlist;
-    console.log('TESTING', userWishlist);
-    const removeWishlistItem = userWishlist.find(wishList => wishList.game_id === this.props.gameId);
-    console.log('TESTING', removeWishlistItem);
-    console.log('TESTING', removeWishlistItem.id);
-
-    const index = userWishlist.indexOf(removeWishlistItem);
-    if (index > -1) {
-      userWishlist.splice(index, 1);
-    }
+    const userGames = this.context.userGames;
+    const userId = this.context.userId;
+    const game = this.props.game;
+    const removeWishlistItem = userWishlist.find(wishList => wishList.game_id === this.props.game.id);
 
     WishlistService.removeFromWishlist(removeWishlistItem.id)
-      .then(() => this.context.setUserWishlist(userWishlist))
-      .catch(this.context.setError);
+      .then(res => {
+        const updatedWishlist = this.removeFromArray(userWishlist, removeWishlistItem);
+        const updatedUserGames = this.removeFromArray(userGames, game);
+        this.context.setUserIdWishlistAndGames(userId, updatedWishlist, updatedUserGames);
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      });
   }
 
   render() {
-
-
-
-    //need to remove from wishlist
     return (
       <button onClick={this.removeFromWishlist}>
         Remove From Wishlist
-        {/* {!this.props.userWishlist.find(game => game.id === this.props.gameId) ? "Add to Wishlist" : "Already Wishlisted!"} */}
       </button>
-
     )
   }
 }

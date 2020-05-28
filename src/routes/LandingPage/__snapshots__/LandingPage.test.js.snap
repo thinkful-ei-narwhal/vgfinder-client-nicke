@@ -2,38 +2,86 @@
 
 exports[`LandingPage component renders a LandingPage component 1`] = `
 <Fragment>
-  <h1>
-    Hello, and welcome to VGFinder!
-  </h1>
-  <p>
-    In an industry dominated by the triple A video games, it's easy to miss out on titles that do not have a multi-million dollar marketing budget. That's why I made this site, to help small video game studios and solo developers get the exposure that their games deserve.
-  </p>
-  <p>
-    This site recommends new indie game titles and lets users make a wishlist of their favorite games. If your are an indie game enthusiast yourself and know of a game that isn't in the database, feel free to contribute and help other gamers finder their new favorite game.
-  </p>
-  <p>
-    You can proceed to the site and explore it as a guest, or you can login with my demo account.
-  </p>
-  <p>
-    Username: dunder
-  </p>
-  <p>
-    Password: password
-  </p>
-  <Link
-    to="/login"
+  <header>
+    <div
+      className="logo"
+    />
+    <h1>
+      Welcome!
+    </h1>
+  </header>
+  <div
+    className="youtube"
   >
-     
-    <button>
-      Log in
-    </button>
-  </Link>
-  <Link
-    to="/homepage"
+    <YouTube
+      className={null}
+      containerClassName=""
+      id={null}
+      onEnd={[Function]}
+      onError={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaybackQualityChange={[Function]}
+      onPlaybackRateChange={[Function]}
+      onReady={[Function]}
+      onStateChange={[Function]}
+      opts={
+        Object {
+          "height": "500",
+          "playerVars": Object {
+            "autoplay": 1,
+            "mute": 1,
+          },
+          "width": "90%",
+        }
+      }
+      videoId="GVpSeSF_Cug"
+    />
+  </div>
+  <Section
+    className="landing-page-text"
   >
-    <button>
-      Continue as guest
-    </button>
-  </Link>
+    <h1>
+      What is VGFinder
+    </h1>
+    <p>
+      In an industry dominated by the triple A video games, it's easy to miss out on titles that don't have a multi-million dollar marketing budget. That's why I made this site, to help small video game studios and solo developers get the exposure that their games deserve.
+    </p>
+    <p>
+      This site recommends new indie game titles and lets users make a wishlist of their favorite games. If you are an indie game enthusiast yourself and know of a game that isn't in the database, feel free to contribute and help other gamers finder their new favorite game.
+    </p>
+    <p>
+      You can proceed to the site and explore it as a guest, or you can login with my demo account.
+    </p>
+    <p>
+      Username: dunder
+    </p>
+    <p>
+      Password: password
+    </p>
+    <div
+      className="landing-buttons-container"
+    >
+      <Link
+        to="/login"
+      >
+         
+        <Button
+          className="landing-button"
+        >
+          Log in
+        </Button>
+      </Link>
+      <Link
+        to="/homepage"
+      >
+        <Button
+          className="landing-button"
+        >
+          Continue as guest
+        </Button>
+      </Link>
+    </div>
+  </Section>
 </Fragment>
 `;

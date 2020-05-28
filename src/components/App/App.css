@@ -1,3 +1,37 @@
+/* universal css */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  background: url("./../../images/background2.png");
+}
+
+main,
+body {
+  margin: auto;
+  max-width: 960px;
+  padding: 0;
+  overflow-x: hidden;
+  min-width: 360px;
+  background-color: lightgray;
+  width: 100%;
+}
+
+p {
+  font-size: 20px;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* app specific */
+
 .App {
   text-align: center;
 }

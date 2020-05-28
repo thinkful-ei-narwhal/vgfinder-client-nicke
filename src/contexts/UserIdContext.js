@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 const UserIdContext = React.createContext({
   userId: undefined,
   wishlist: [],
   userGames: [],
-  setUserId: () => { },
-  setUserWishlist: () => { },
-  setUserIdWishlistAndGames: () => { }
-})
+  setUserId: () => {},
+  setUserWishlist: () => {},
+  setUserIdWishlistAndGames: () => {},
+});
 
-export default UserIdContext
+export default UserIdContext;
 
 export class UserIdContextProvider extends Component {
   state = {
@@ -19,13 +19,12 @@ export class UserIdContextProvider extends Component {
   };
 
   setUserId = (userId) => {
-    this.setState({ userId })
-  }
+    this.setState({ userId });
+  };
 
   setUserIdWishlistAndGames = (userId, wishlist, userGames) => {
-    this.setState({ userId, wishlist, userGames })
-  }
-
+    this.setState({ userId, wishlist, userGames });
+  };
 
   render() {
     const value = {
@@ -33,13 +32,13 @@ export class UserIdContextProvider extends Component {
       wishlist: this.state.wishlist,
       userGames: this.state.userGames,
       setUserId: this.setUserId,
-      setUserIdWishlistAndGames: this.setUserIdWishlistAndGames
-    }
+      setUserIdWishlistAndGames: this.setUserIdWishlistAndGames,
+    };
 
     return (
       <UserIdContext.Provider value={value}>
         {this.props.children}
       </UserIdContext.Provider>
-    )
+    );
   }
 }

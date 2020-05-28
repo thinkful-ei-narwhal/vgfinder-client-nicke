@@ -4,9 +4,7 @@ exports[`Game Page component renders a Game Page component 1`] = `
 <ContextProvider
   value={
     Object {
-      "clearError": [Function],
       "clearGame": [Function],
-      "error": null,
       "game": Object {
         "description": "",
         "developer": "",
@@ -22,7 +20,6 @@ exports[`Game Page component renders a Game Page component 1`] = `
         "title": "",
         "trailer_url": "",
       },
-      "setError": [Function],
       "setGame": [Function],
     }
   }

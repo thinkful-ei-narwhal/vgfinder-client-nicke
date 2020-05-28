@@ -2,47 +2,112 @@
 
 exports[`Header component renders a Header component with supplied props 1`] = `
 <Fragment>
+  <div
+    className="logo"
+  />
   <header
-    className="App__header"
+    className="App__header Navbar"
   >
-    <h1>
-      IndieVG
-    </h1>
-    <nav
-      className="topnav"
+    <div
+      className="Navbar__Link Navbar__Link-brand"
     >
-      <Link
-        className="active"
-        to="/homepage"
-      >
-         Home
-      </Link>
-      <Link
+      Home
+    </div>
+    <div
+      className="Navbar__Link Navbar__Link-toggle"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
         className=""
-        to="/search"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f0c9",
+              "M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z",
+            ],
+            "iconName": "bars",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        swapOpacity={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </div>
+    <nav
+      className="topnav Navbar__Items"
+    >
+      <div
+        className="Navbar__Link"
       >
-        Search
-      </Link>
-      <Link
-        className=""
-        to="/wishlist"
-      >
-        Wishlist
-      </Link>
-      <Link
-        className=""
-        to="/contribute"
-      >
-        Contribute
-      </Link>
-      <div>
         <Link
-          className=""
-          to="/login"
+          className="active"
+          to="/homepage"
         >
-          Log in
+          Home
         </Link>
       </div>
+      <div
+        className="Navbar__Link"
+      >
+        <Link
+          className=""
+          to="/search"
+        >
+          Search
+        </Link>
+      </div>
+      <div
+        className="Navbar__Link"
+      >
+        <Link
+          className=""
+          to="/wishlist"
+        >
+          Wishlist
+        </Link>
+      </div>
+      <div
+        className="Navbar__Link"
+      >
+        <Link
+          className=""
+          to="/contribute"
+        >
+          Contribute
+        </Link>
+      </div>
+      <nav
+        className="Navbar__Items Navbar__Items--right"
+      >
+        <div
+          className="Navbar__Link"
+        >
+          <div>
+            <Link
+              className=""
+              to="/login"
+            >
+              Log in
+            </Link>
+          </div>
+        </div>
+      </nav>
     </nav>
   </header>
 </Fragment>
@@ -50,47 +115,112 @@ exports[`Header component renders a Header component with supplied props 1`] = `
 
 exports[`Header component renders a Header component without supplied props 1`] = `
 <Fragment>
+  <div
+    className="logo"
+  />
   <header
-    className="App__header"
+    className="App__header Navbar"
   >
-    <h1>
-      IndieVG
-    </h1>
-    <nav
-      className="topnav"
+    <div
+      className="Navbar__Link Navbar__Link-brand"
     >
-      <Link
+      Game
+    </div>
+    <div
+      className="Navbar__Link Navbar__Link-toggle"
+      onClick={[Function]}
+    >
+      <FontAwesomeIcon
+        border={false}
         className=""
-        to="/homepage"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f0c9",
+              "M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z",
+            ],
+            "iconName": "bars",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        swapOpacity={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </div>
+    <nav
+      className="topnav Navbar__Items"
+    >
+      <div
+        className="Navbar__Link"
       >
-         Home
-      </Link>
-      <Link
-        className=""
-        to="/search"
-      >
-        Search
-      </Link>
-      <Link
-        className=""
-        to="/wishlist"
-      >
-        Wishlist
-      </Link>
-      <Link
-        className=""
-        to="/contribute"
-      >
-        Contribute
-      </Link>
-      <div>
         <Link
           className=""
-          to="/login"
+          to="/homepage"
         >
-          Log in
+          Home
         </Link>
       </div>
+      <div
+        className="Navbar__Link"
+      >
+        <Link
+          className=""
+          to="/search"
+        >
+          Search
+        </Link>
+      </div>
+      <div
+        className="Navbar__Link"
+      >
+        <Link
+          className=""
+          to="/wishlist"
+        >
+          Wishlist
+        </Link>
+      </div>
+      <div
+        className="Navbar__Link"
+      >
+        <Link
+          className=""
+          to="/contribute"
+        >
+          Contribute
+        </Link>
+      </div>
+      <nav
+        className="Navbar__Items Navbar__Items--right"
+      >
+        <div
+          className="Navbar__Link"
+        >
+          <div>
+            <Link
+              className=""
+              to="/login"
+            >
+              Log in
+            </Link>
+          </div>
+        </div>
+      </nav>
     </nav>
   </header>
 </Fragment>

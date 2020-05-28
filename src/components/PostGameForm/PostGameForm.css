@@ -1,3 +1,16 @@
+.rating {
+  display: flex;
+  flex-direction: column;
+}
+
 .slider {
-  height: 50px;
+  width: 300px;
+  margin: auto !important;
+
+  margin-bottom: 20px;
+}
+
+.important {
+  background-color: #333;
+  color: lightgray;
 }

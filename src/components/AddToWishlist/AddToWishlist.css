@@ -1,0 +1,12 @@
+.add-button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: black;
+  background-color: lightgray;
+}
+
+.wishlisted-color {
+  background-color: #5dc21e;
+  border: none;
+  color: white;
+}

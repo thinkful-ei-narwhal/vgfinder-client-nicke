@@ -2,20 +2,34 @@
 
 exports[`GameCarousel component renders the GameCarousel given GamePage props 1`] = `
 <Fragment>
-  <div>
-    <img
-      alt="Logo"
-      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-      width="500"
-    />
+  <div
+    className="slideshow-container"
+  >
+    <div
+      className="showSlide fade"
+      key="0"
+    >
+      <div
+        className="numbertext"
+      >
+        1
+         / 
+        1
+      </div>
+      <img
+        alt="undefined thumbnail"
+        src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+      />
+    </div>
   </div>
-  <div>
-    <img
-      alt="Logo"
+  <br />
+  <div
+    className="style-align"
+  >
+    <span
+      className="dot"
       key="0"
       onClick={[Function]}
-      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-      width="100"
     />
   </div>
 </Fragment>
@@ -23,31 +37,72 @@ exports[`GameCarousel component renders the GameCarousel given GamePage props 1`
 
 exports[`GameCarousel component renders the GameCarousel given GamesHomePage props 1`] = `
 <Fragment>
-  <div>
-    <Link
-      to="/games/2"
+  <div
+    className="slideshow-container"
+  >
+    <div
+      className="showSlide fade"
+      key="0"
     >
-      <img
-        alt="Logo"
-        src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-        width="500"
-      />
-    </Link>
+      <div
+        className="numbertext"
+      >
+        1
+         / 
+        2
+      </div>
+      <Link
+        to="/games/2"
+      >
+         
+        <img
+          alt="testGame thumbnail"
+          src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+        />
+      </Link>
+    </div>
+    <div
+      className="mySlides fade"
+      key="1"
+    >
+      <div
+        className="numbertext"
+      >
+        2
+         / 
+        2
+      </div>
+      <Link
+        to="/games/3"
+      >
+         
+        <img
+          alt="testGame thumbnail"
+          src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+        />
+      </Link>
+    </div>
+    <a
+      className="next"
+      href="#0"
+      onClick={[Function]}
+    >
+      ❯
+    </a>
   </div>
-  <div>
-    <img
-      alt="Logo"
+  <br />
+  <div
+    className="style-align"
+  >
+    <span
+      className="dot"
       key="0"
       onClick={[Function]}
-      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-      width="100"
     />
-    <img
-      alt="Logo"
+    <span
+      className="dot"
       key="1"
       onClick={[Function]}
-      src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-      width="100"
     />
   </div>
 </Fragment>

@@ -2,137 +2,149 @@
 
 exports[`Search component renders a Search component with supplied props 1`] = `
 <Fragment>
-  <div
-    className="genre"
+  <Section
+    className="search-container"
   >
-    <label
-      htmlFor="search_genre"
+    <div
+      className="sidebyside"
     >
-      Genre
-    </label>
-    <select
-      id="search_genre"
-      name="search_genre"
-      onChange={[Function]}
-      required={true}
-      value="All"
-    >
-      <option
-        value="All"
+      <div
+        className="genre"
       >
-        All
-      </option>
-      <option
-        value="Action"
+        <label
+          className="padder genre"
+          htmlFor="search_genre"
+        >
+          Genre
+        </label>
+        <Select
+          id="search_genre"
+          name="search_genre"
+          onChange={[Function]}
+          required={true}
+          value="All"
+        >
+          <Option
+            value="All"
+          >
+            All
+          </Option>
+          <Option
+            value="Action"
+          >
+            Action
+          </Option>
+          <Option
+            value="Adventure"
+          >
+            Adventure
+          </Option>
+          <Option
+            value="Simulation"
+          >
+            Simulation
+          </Option>
+          <Option
+            value="Strategy"
+          >
+            Strategy
+          </Option>
+          <Option
+            value="RPG"
+          >
+            RPG
+          </Option>
+          <Option
+            value="Sports"
+          >
+            Sports
+          </Option>
+          <Option
+            value="Horror"
+          >
+            Horror
+          </Option>
+          <Option
+            value="FPS"
+          >
+            FPS
+          </Option>
+          <Option
+            value="Third Person"
+          >
+            Third Person
+          </Option>
+          <Option
+            value="Point And Click"
+          >
+            Point And Click
+          </Option>
+          <Option
+            value="Mystery"
+          >
+            Mystery
+          </Option>
+          <Option
+            value="RTS"
+          >
+            RTS
+          </Option>
+          <Option
+            value="Puzzle"
+          >
+            Puzzle
+          </Option>
+        </Select>
+      </div>
+      <div
+        className="sidebyside-input"
       >
-        Action
-      </option>
-      <option
-        value="Adventure"
-      >
-        Adventure
-      </option>
-      <option
-        value="Simulation"
-      >
-        Simulation
-      </option>
-      <option
-        value="Strategy"
-      >
-        Strategy
-      </option>
-      <option
-        value="RPG"
-      >
-        RPG
-      </option>
-      <option
-        value="Sports"
-      >
-        Sports
-      </option>
-      <option
-        value="Horror"
-      >
-        Horror
-      </option>
-      <option
-        value="FPS"
-      >
-        FPS
-      </option>
-      <option
-        value="Third Person"
-      >
-        Third Person
-      </option>
-      <option
-        value="Point And Click"
-      >
-        Point And Click
-      </option>
-      <option
-        value="Mystery"
-      >
-        Mystery
-      </option>
-      <option
-        value="RTS"
-      >
-        RTS
-      </option>
-      <option
-        value="Puzzle"
-      >
-        Puzzle
-      </option>
-    </select>
-  </div>
-  <div>
-    <label
-      htmlFor="Search"
-    >
-      <FontAwesomeIcon
-        border={false}
-        className=""
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              512,
-              512,
-              Array [],
-              "f002",
-              "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
-            ],
-            "iconName": "search",
-            "prefix": "fas",
-          }
-        }
-        inverse={false}
-        listItem={false}
-        mask={null}
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size={null}
-        spin={false}
-        swapOpacity={false}
-        symbol={false}
-        title=""
-        transform={null}
-      />
-    </label>
-    <Input
-      id="Search"
-      name="Search"
-      onChange={[Function]}
-      placeholder="Search"
-      value=""
-    />
-  </div>
+        <label
+          className="padder"
+          htmlFor="Search"
+        >
+          <FontAwesomeIcon
+            border={false}
+            className="fontawesome-sizing"
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f002",
+                  "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z",
+                ],
+                "iconName": "search",
+                "prefix": "fas",
+              }
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </label>
+        <Input
+          id="Search"
+          name="Search"
+          onChange={[Function]}
+          placeholder="Search"
+          value=""
+        />
+      </div>
+    </div>
+  </Section>
   <Section>
     <GamesList
       gamesList={

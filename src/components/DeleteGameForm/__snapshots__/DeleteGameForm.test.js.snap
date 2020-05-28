@@ -16,7 +16,7 @@ exports[`DeleteGameForm component renders a form.DeleteGameForm by default 1`] =
     >
       Title
     </label>
-    <input
+    <Input
       id="DeleteGameForm_title"
       name="title"
       onChange={[Function]}
@@ -24,11 +24,11 @@ exports[`DeleteGameForm component renders a form.DeleteGameForm by default 1`] =
       value=""
     />
   </div>
-  <button
+  <Button
     disabled={true}
     type="submit"
   >
     Delete Game
-  </button>
+  </Button>
 </form>
 `;

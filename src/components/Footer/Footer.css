@@ -1,4 +1,45 @@
+footer.contact {
+  background-color: #333;
+  height: 90px;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+address.address-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+div.footer-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 50px;
+}
+
+address > p {
+  margin: 0;
+}
+
 .font-awesome {
-  font-size: 40px;
-  color:#B3B3B3;
+  font-size: 30px;
+  color: #b3b3b3;
+  display: inline-block;
+  color: white;
+  width: 40px;
+  vertical-align: bottom;
+}
+
+@media screen and (min-width: 720px) {
+  address > p {
+    padding-right: 20px;
+  }
+
+  .font-awesome {
+    line-height: 30px;
+  }
 }

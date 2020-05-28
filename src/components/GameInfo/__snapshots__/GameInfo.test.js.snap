@@ -1,20 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GameInfo component renders a GameInfo with supplied props 1`] = `
-<Fragment>
-  <p />
-  <p>
-    Genre: 
-  </p>
-  <p>
-    Rating: 
-  </p>
-  <p>
-    Release Date: 
-    Invalid Date
-  </p>
-  <p>
-    Developer: 
-  </p>
-</Fragment>
+<div
+  className="game-info-container"
+>
+  <div
+    className="game-info-text-holder game-info-holder"
+  >
+    <p />
+    <p>
+      Genre: 
+    </p>
+    <p>
+      Rating: 
+    </p>
+    <p>
+      Release Date: 
+      Invalid Date
+    </p>
+    <p>
+      Developer: 
+    </p>
+    <Button
+      disabled={true}
+    >
+      Sign in to add game to wishlist
+    </Button>
+  </div>
+</div>
 `;

@@ -16,7 +16,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Title
     </label>
-    <input
+    <Input
       id="PostGameForm_title"
       name="title"
       required={true}
@@ -30,7 +30,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Description
     </label>
-    <textarea
+    <Textarea
       id="PostGameForm_description"
       name="description"
       required={true}
@@ -44,77 +44,77 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Genre
     </label>
-    <select
+    <Select
       id="PostGameForm_genre"
       name="genre"
       required={true}
     >
-      <option
+      <Option
         value="Action"
       >
         Action
-      </option>
-      <option
+      </Option>
+      <Option
         value="Adventure"
       >
         Adventure
-      </option>
-      <option
+      </Option>
+      <Option
         value="Simulation"
       >
         Simulation
-      </option>
-      <option
+      </Option>
+      <Option
         value="Strategy"
       >
         Strategy
-      </option>
-      <option
+      </Option>
+      <Option
         value="RPG"
       >
         RPG
-      </option>
-      <option
+      </Option>
+      <Option
         value="Sports"
       >
         Sports
-      </option>
-      <option
+      </Option>
+      <Option
         value="Horror"
       >
         Horror
-      </option>
-      <option
+      </Option>
+      <Option
         value="FPS"
       >
         FPS
-      </option>
-      <option
+      </Option>
+      <Option
         value="Third Person"
       >
         Third Person
-      </option>
-      <option
+      </Option>
+      <Option
         value="Point And Click"
       >
         Point And Click
-      </option>
-      <option
+      </Option>
+      <Option
         value="Mystery"
       >
         Mystery
-      </option>
-      <option
+      </Option>
+      <Option
         value="RTS"
       >
         RTS
-      </option>
-      <option
+      </Option>
+      <Option
         value="Puzzle"
       >
         Puzzle
-      </option>
-    </select>
+      </Option>
+    </Select>
   </div>
   <div
     className="rating"
@@ -124,21 +124,24 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Rating
     </label>
-    <Slider
+    <div
       className="slider"
-      handleLabel=""
-      id="PostGameForm_rating"
-      labels={Object {}}
-      max={10}
-      min={0}
-      name="rating"
-      onChange={[Function]}
-      orientation="horizontal"
-      reverse={false}
-      step={1}
-      tooltip={true}
-      value={0}
-    />
+    >
+      <Slider
+        handleLabel=""
+        id="PostGameForm_rating"
+        labels={Object {}}
+        max={10}
+        min={0}
+        name="rating"
+        onChange={[Function]}
+        orientation="horizontal"
+        reverse={false}
+        step={1}
+        tooltip={true}
+        value={0}
+      />
+    </div>
   </div>
   <div
     className="YearNavigation release_date"
@@ -272,7 +275,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Developer
     </label>
-    <input
+    <Input
       id="PostGameForm_developer"
       name="developer"
       required={true}
@@ -286,11 +289,18 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Trailer Youtube Url
     </label>
-    <input
+    <Input
       id="PostGameForm_trailer_url"
       name="trailer_url"
       required={true}
     />
+  </div>
+  <div
+    className="important"
+  >
+    <h3>
+      Important: Only use images with a 16:9 aspect ratio
+    </h3>
   </div>
   <div
     className="image_url_box_art"
@@ -300,7 +310,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Cover Art
     </label>
-    <input
+    <Input
       id="PostGameForm_image_url_box_art"
       name="image_url_box_art"
       required={true}
@@ -314,7 +324,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Screen Shot 1
     </label>
-    <input
+    <Input
       id="PostGameForm_image_url_two"
       name="image_url_two"
     />
@@ -327,7 +337,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Screen Shot 2
     </label>
-    <input
+    <Input
       id="PostGameForm_image_url_three"
       name="image_url_three"
     />
@@ -340,7 +350,7 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Screen Shot 3
     </label>
-    <input
+    <Input
       id="PostGameForm_image_url_four"
       name="image_url_four"
     />
@@ -353,15 +363,15 @@ exports[`Post game component renders the complete form 1`] = `
     >
       Screen Shot 4
     </label>
-    <input
+    <Input
       id="PostGameForm_image_url_five"
       name="image_url_five"
     />
   </div>
-  <button
+  <Button
     type="submit"
   >
     Submit Game
-  </button>
+  </Button>
 </form>
 `;

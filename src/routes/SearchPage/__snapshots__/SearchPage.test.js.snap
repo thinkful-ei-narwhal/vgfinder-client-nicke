@@ -4,10 +4,7 @@ exports[`SearchPage component renders a SearchPage component 1`] = `
 <ContextProvider
   value={
     Object {
-      "clearError": [Function],
-      "error": null,
       "gamesList": Array [],
-      "setError": [Function],
       "setGamesList": [Function],
     }
   }

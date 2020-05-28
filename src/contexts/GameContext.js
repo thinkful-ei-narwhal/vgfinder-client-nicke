@@ -1,68 +1,52 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export const nullGame = {
-  id: '',
-  title: '',
-  description: '',
-  genre: '',
-  rating: '',
-  release_date: '',
-  developer: '',
-  trailer_url: '',
-  image_url_box_art: '',
-  image_url_two: '',
-  image_url_three: '',
-  image_url_four: '',
-  image_url_five: ''
-}
+  id: "",
+  title: "",
+  description: "",
+  genre: "",
+  rating: "",
+  release_date: "",
+  developer: "",
+  trailer_url: "",
+  image_url_box_art: "",
+  image_url_two: "",
+  image_url_three: "",
+  image_url_four: "",
+  image_url_five: "",
+};
 
 const GameContext = React.createContext({
   game: nullGame,
-  error: null,
-  setError: () => { },
-  clearError: () => { },
-  setGame: () => { },
-  clearGame: () => { },
-})
+  setGame: () => {},
+  clearGame: () => {},
+});
 
-export default GameContext
+export default GameContext;
 
 export class GameProvider extends Component {
   state = {
     game: nullGame,
-    error: null,
   };
 
-  setError = error => {
-    console.error(error)
-    this.setState({ error })
-  }
-
-  clearError = () => {
-    this.setState({ error: null })
-  }
-
-  setGame = game => {
-    this.setState({ game })
-  }
+  setGame = (game) => {
+    this.setState({ game });
+  };
 
   clearGame = () => {
-    this.setGame(nullGame)
-  }
+    this.setGame(nullGame);
+  };
 
   render() {
     const value = {
       game: this.state.game,
-      error: this.state.error,
-      setError: this.setError,
-      clearError: this.clearError,
       setGame: this.setGame,
       clearGame: this.clearGame,
-    }
+    };
     return (
       <GameContext.Provider value={value}>
         {this.props.children}
       </GameContext.Provider>
-    )
+    );
   }
 }

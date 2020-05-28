@@ -1,58 +1,113 @@
-import React, { Component } from 'react';
-import './GameCarousel.css'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./GameCarousel.css";
 
 export default class GamesCarousel extends Component {
-  static defaultProps = {
-    reel: [],
-    isSingleGame: true
-  }
-
   state = {
-    hero_url: "",
-    hero_id: 0,
-    reel: []
-  }
-
-  //only redirects if not already on a GamePage
-  setCarouselHero = (hero_url, hero_id) => {
-    this.setState({ hero_url, hero_id })
-  }
+    currentSlide: 0,
+    loaded: true,
+  };
 
   componentDidMount() {
+    if (!this.props.reel) {
+      throw new Error("Supply an image reel");
+    }
     this.setState({
-      hero_url: this.props.reel[0].imgUrl,
-      hero_id: this.props.reel[0].gameId,
-      reel: this.props.reel
+      reel: this.props.reel,
+      currentSlide: 0,
+      loaded: true,
     });
   }
 
-  renderHero() {
-    //Adds dynamic link if on the games page
-    return this.props.isSingleGame ?
-      <img src={this.state.hero_url} width="500" alt="Logo" />
-      : <Link to={`/games/${this.state.hero_id}`}><img src={this.state.hero_url} width="500" alt="Logo" /></Link>;
+  plusSlide() {
+    this.setState({ currentSlide: this.state.currentSlide + 1 });
+    if (!this.props.isSingleGame)
+      this.props.setActiveGame(
+        this.props.reel.find(
+          (reelObj, index) => this.state.currentSlide + 1 === index
+        ).gameId
+      );
   }
 
-  renderReel() {
-    return this.props.isSingleGame ?
-      this.state.reel.map((reelObj, index) => <img key={index} onClick={() => this.setCarouselHero(reelObj.imgUrl, reelObj.gameId)} src={reelObj.imgUrl} width="100" alt="Logo" />)
-      : this.state.reel.map((reelObj, index) => <img key={index} onClick={() => {
-        this.setCarouselHero(reelObj.imgUrl, reelObj.gameId)
-        this.props.setActiveGame(reelObj.gameId)
-      }} src={reelObj.imgUrl} width="100" alt="Logo" />)
+  minusSlide() {
+    this.setState({ currentSlide: this.state.currentSlide - 1 });
+    if (!this.props.isSingleGame)
+      this.props.setActiveGame(
+        this.props.reel.find(
+          (reelObj, index) => this.state.currentSlide - 1 === index
+        ).gameId
+      );
+  }
+
+  mapImages() {
+    return this.props.reel.map((reelObj, index) => {
+      const slide =
+        this.state.currentSlide === index ? "showSlide" : "mySlides";
+      return this.props.isSingleGame ? (
+        <div key={index} className={`${slide} fade`}>
+          <div className="numbertext">
+            {index + 1} / {this.props.reel.length}
+          </div>
+          <img src={reelObj.imgUrl} alt={`${reelObj.title} thumbnail`} />
+        </div>
+      ) : (
+        <div key={index} className={`${slide} fade`}>
+          <div className="numbertext">
+            {index + 1} / {this.props.reel.length}
+          </div>
+          <Link to={`/games/${reelObj.gameId}`}>
+            {" "}
+            <img src={reelObj.imgUrl} alt={`${reelObj.title} thumbnail`} />
+          </Link>
+        </div>
+      );
+    });
+  }
+
+  mapDots() {
+    return this.props.reel.map((reelObj, index) => {
+      return this.props.isSingleGame ? (
+        <span
+          key={index}
+          className="dot"
+          onClick={() => this.setState({ currentSlide: index })}
+        ></span>
+      ) : (
+        <span
+          key={index}
+          className="dot"
+          onClick={() => {
+            this.setState({ currentSlide: index });
+            this.props.setActiveGame(reelObj.gameId);
+          }}
+        ></span>
+      );
+    });
+  }
+
+  renderOnLoad() {
+    return (
+      <>
+        <div className="slideshow-container">
+          {this.mapImages()}
+          {this.state.currentSlide === 0 ? null : (
+            <a href="#0" className="prev" onClick={() => this.minusSlide()}>
+              &#10094;
+            </a>
+          )}
+          {this.state.currentSlide === this.props.reel.length - 1 ? null : (
+            <a href="#0" className="next" onClick={() => this.plusSlide()}>
+              &#10095;
+            </a>
+          )}
+        </div>
+        <br />
+        <div className="style-align">{this.mapDots()}</div>
+      </>
+    );
   }
 
   render() {
-    return (
-      <>
-        <div>
-          {this.renderHero()}
-        </div>
-        <div>
-          {this.renderReel()}
-        </div>
-      </>
-    )
+    return <>{this.state.loaded ? this.renderOnLoad() : null}</>;
   }
 }

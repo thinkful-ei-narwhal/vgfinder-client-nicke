@@ -1,0 +1,40 @@
+.game-info-container {
+  background-color: #333;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 45px;
+}
+
+.game-name {
+  font-weight: bolder !important;
+  font-size: 40px;
+}
+
+.game-info-holder {
+  margin: auto;
+}
+
+.game-info-text-holder {
+  color: lightgray;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media only screen and (max-width: 520px) {
+  .game-info-container {
+    width: 95%;
+  }
+  .game-info-text-holder > p {
+    font-size: 18px;
+  }
+
+  .game-name {
+    font-weight: bold;
+    font-size: 30px;
+  }
+}

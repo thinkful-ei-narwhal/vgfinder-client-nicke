@@ -3,13 +3,12 @@
 exports[`LoginPage component renders a LoginPage component without props 1`] = `
 <Fragment>
   <Header />
-  <Section
-    className="LoginPage"
-  >
+  <Section>
     <h2>
       Login
     </h2>
     <LoginForm
+      className="LoginPage"
       onLoginSuccess={[Function]}
     />
   </Section>

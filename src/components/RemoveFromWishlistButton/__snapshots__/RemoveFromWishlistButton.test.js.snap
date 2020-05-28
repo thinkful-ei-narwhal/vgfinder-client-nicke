@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RemoveFromWishlistButton component renders a RemoveFromWishlistButton component with supplied props 1`] = `
-<button
+<Button
+  className="remove-button"
   onClick={[Function]}
 >
   Remove From Wishlist
-</button>
+</Button>
 `;

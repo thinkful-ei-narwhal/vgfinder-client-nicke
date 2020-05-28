@@ -48,18 +48,26 @@ export default class LoginForm extends Component {
             <Alert message={error} handleErrorClick={this.handleErrorClick} />
           )}
         </div>
-        <div className="user_name">
-          <label htmlFor="LoginForm__user_name">User name</label>
-          <Input required name="user_name" id="LoginForm__user_name"></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="LoginForm__user_name">User name</label>
+          </div>
+          <div className="input-container">
+            <Input required name="user_name" id="LoginForm__user_name"></Input>
+          </div>
         </div>
-        <div className="password">
-          <label htmlFor="LoginForm__password">Password</label>
-          <Input
-            required
-            name="password"
-            type="password"
-            id="LoginForm__password"
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="LoginForm__password">Password</label>
+          </div>
+          <div className="input-container">
+            <Input
+              required
+              name="password"
+              type="password"
+              id="LoginForm__password"
+            ></Input>
+          </div>
         </div>
         <Button type="submit">Login</Button>
       </form>

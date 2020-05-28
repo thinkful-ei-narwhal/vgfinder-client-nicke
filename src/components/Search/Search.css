@@ -26,6 +26,10 @@ h1.smaller {
   justify-content: space-evenly;
 }
 
+.ml {
+  margin-left: 15px;
+}
+
 .fontawesome-sizing {
   font-size: 25px;
   text-align: center;

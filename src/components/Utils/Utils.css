@@ -4,8 +4,10 @@
 }
 
 .Input,
-.Textarea {
-  max-width: 400px;
+.Textarea,
+.select,
+.option {
+  width: 300px;
   margin: auto;
   margin-bottom: 20px;
   order: 1px solid #aaa;
@@ -19,6 +21,7 @@
 .Textarea::placeholder {
   color: #ccc;
   font-size: 0.81em;
+  font-weight: bold;
 }
 
 .Textarea {
@@ -64,11 +67,12 @@
   margin-right: 10px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .Input,
   .Textarea,
-  .select {
-    max-width: 200px;
+  .select,
+  .option {
+    width: 250px;
     margin: auto;
     margin-bottom: 20px;
     order: 1px solid #aaa;
@@ -76,5 +80,10 @@
     font-size: 1.1em;
     padding: 8px 12px;
     font-weight: bold;
+  }
+
+  .Input::placeholder,
+  .Textarea::placeholder {
+    font-size: 1.1em;
   }
 }

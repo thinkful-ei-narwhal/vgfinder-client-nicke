@@ -67,15 +67,19 @@ export default class DeleteGameForm extends Component {
             <Alert message={error} handleErrorClick={this.handleErrorClick} />
           )}
         </div>
-        <div className="title">
-          <label htmlFor="DeleteGameForm_title">Title</label>
-          <Input
-            required
-            name="title"
-            id="DeleteGameForm_title"
-            value={this.state.deleteTitle}
-            onChange={(e) => this.handleGameExistsChange(e, gamesList)}
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="DeleteGameForm_title">Title</label>
+          </div>
+          <div className="input-container">
+            <Input
+              required
+              name="title"
+              id="DeleteGameForm_title"
+              value={this.state.deleteTitle}
+              onChange={(e) => this.handleGameExistsChange(e, gamesList)}
+            ></Input>
+          </div>
         </div>
 
         <Button type="submit" disabled={!this.state.deleteEnabled}>

@@ -44,22 +44,38 @@ export default class GamesCarousel extends Component {
       const slide =
         this.state.currentSlide === index ? "showSlide" : "mySlides";
       return this.props.isSingleGame ? (
-        <div key={index} className={`${slide} fade`}>
-          <div className="numbertext">
+        <div
+          key={index}
+          style={{
+            backgroundColor: "black",
+            backgroundImage: `url(${reelObj.imgUrl})`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+          className={`${slide} fade container`}
+        >
+          <div className="numbertext ">
             {index + 1} / {this.props.reel.length}
           </div>
-          <img src={reelObj.imgUrl} alt={`${reelObj.title} thumbnail`} />
         </div>
       ) : (
-        <div key={index} className={`${slide} fade`}>
-          <div className="numbertext">
-            {index + 1} / {this.props.reel.length}
+        <Link key={index} to={`/games/${reelObj.gameId}`}>
+          <div
+            style={{
+              backgroundColor: "black",
+              backgroundImage: `url(${reelObj.imgUrl})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+            className={`${slide} fade container`}
+          >
+            <div className="numbertext">
+              {index + 1} / {this.props.reel.length}
+            </div>
           </div>
-          <Link to={`/games/${reelObj.gameId}`}>
-            {" "}
-            <img src={reelObj.imgUrl} alt={`${reelObj.title} thumbnail`} />
-          </Link>
-        </div>
+        </Link>
       );
     });
   }
@@ -91,12 +107,20 @@ export default class GamesCarousel extends Component {
         <div className="slideshow-container">
           {this.mapImages()}
           {this.state.currentSlide === 0 ? null : (
-            <a href="#0" className="prev" onClick={() => this.minusSlide()}>
+            <a
+              href="#0"
+              className="prev game-carousel-button"
+              onClick={() => this.minusSlide()}
+            >
               &#10094;
             </a>
           )}
           {this.state.currentSlide === this.props.reel.length - 1 ? null : (
-            <a href="#0" className="next" onClick={() => this.plusSlide()}>
+            <a
+              href="#0"
+              className="next game-carousel-button"
+              onClick={() => this.plusSlide()}
+            >
               &#10095;
             </a>
           )}

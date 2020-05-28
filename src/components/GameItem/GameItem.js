@@ -31,11 +31,23 @@ export default class GameItem extends Component {
         <div className="gameitem-display">
           <div className="game-item-img-container">
             <Link to={`/games/${this.props.game.id}`}>
-              <img
+              <div
+                style={{
+                  backgroundColor: "black",
+                  backgroundImage: `url(${this.props.game.image_url_box_art})`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                }}
+                className={`container`}
+              >
+              </div>
+
+              {/* <img
                 src={this.props.game.image_url_box_art}
                 className="game-item-img"
                 alt={`${this.props.game.title} screenshot`}
-              />
+              /> */}
             </Link>
           </div>
           <div className="text-holder">

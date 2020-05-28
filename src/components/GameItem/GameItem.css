@@ -18,10 +18,12 @@
 
 .game-item-container {
   background-color: #333;
-  margin-bottom: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
   min-width: 320px;
+  max-width: 770px;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 /* Aspect ratio stuff */
@@ -37,15 +39,22 @@
   height: 100%;
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 720px) {
   .textbox {
     margin: 0 auto;
+  }
+
+  .text-holder {
+    margin-top: 5px;
   }
 
   .game-item-container {
     background-color: #333;
     height: 380px;
     padding-top: 15px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 20px;
   }
 
   .game-item-img-container {

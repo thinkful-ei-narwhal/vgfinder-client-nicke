@@ -195,43 +195,55 @@ export default class PostGameForm extends Component {
             <Alert message={error} handleErrorClick={this.handleErrorClick} />
           )}
         </div>
-        <div className="title">
-          <label htmlFor="PostGameForm_title">Title</label>
-          <Input
-            required
-            name="title"
-            id="PostGameForm_title"
-            reference={this.gameTitle}
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_title">Title</label>
+          </div>
+          <div className="input-container">
+            <Input
+              required
+              name="title"
+              id="PostGameForm_title"
+              reference={this.gameTitle}
+            ></Input>
+          </div>
         </div>
 
-        <div className="description">
-          <label htmlFor="PostGameForm_description">Description</label>
-          <Textarea
-            required
-            name="description"
-            id="PostGameForm_description"
-            reference={this.gameDesc}
-          ></Textarea>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_description">Description</label>
+          </div>
+          <div className="input-container">
+            <Textarea
+              required
+              name="description"
+              id="PostGameForm_description"
+              reference={this.gameDesc}
+            ></Textarea>
+          </div>
         </div>
 
-        <div className="genre">
-          <label htmlFor="PostGameForm_genre">Genre</label>
-          <Select required id="PostGameForm_genre" name="genre">
-            <Option value="Action">Action</Option>
-            <Option value="Adventure">Adventure</Option>
-            <Option value="Simulation">Simulation</Option>
-            <Option value="Strategy">Strategy</Option>
-            <Option value="RPG">RPG</Option>
-            <Option value="Sports">Sports</Option>
-            <Option value="Horror">Horror</Option>
-            <Option value="FPS">FPS</Option>
-            <Option value="Third Person">Third Person</Option>
-            <Option value="Point And Click">Point And Click</Option>
-            <Option value="Mystery">Mystery</Option>
-            <Option value="RTS">RTS</Option>
-            <Option value="Puzzle">Puzzle</Option>
-          </Select>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_genre">Genre</label>
+          </div>
+          <div className="input-container">
+            <Select required id="PostGameForm_genre" name="genre">
+              <Option value="Action">Action</Option>
+              <Option value="Adventure">Adventure</Option>
+              <Option value="Simulation">Simulation</Option>
+              <Option value="Strategy">Strategy</Option>
+              <Option value="RPG">RPG</Option>
+              <Option value="Sports">Sports</Option>
+              <Option value="Horror">Horror</Option>
+              <Option value="FPS">FPS</Option>
+              <Option value="Third Person">Third Person</Option>
+              <Option value="Point And Click">Point And Click</Option>
+              <Option value="Mystery">Mystery</Option>
+              <Option value="RTS">RTS</Option>
+              <Option value="Puzzle">Puzzle</Option>
+            </Select>
+          </div>
         </div>
 
         <div className="rating">
@@ -269,60 +281,94 @@ export default class PostGameForm extends Component {
           />
         </div>
 
-        <div className="developer">
-          <label htmlFor="PostGameForm_developer">Developer</label>
-          <Input
-            required
-            name="developer"
-            id="PostGameForm_developer"
-            reference={this.gameDev}
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_developer">Developer</label>
+          </div>
+          <div className="input-container">
+            <Input
+              required
+              name="developer"
+              id="PostGameForm_developer"
+              reference={this.gameDev}
+            ></Input>
+          </div>
         </div>
 
-        <div className="trailer_url">
-          <label htmlFor="PostGameForm_trailer_url">Trailer Youtube Url</label>
-          <Input
-            required
-            name="trailer_url"
-            id="PostGameForm_trailer_url"
-            reference={this.gameTrailer}
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_trailer_url">Youtube Url</label>
+          </div>
+          <div className="input-container">
+            <Input
+              required
+              name="trailer_url"
+              id="PostGameForm_trailer_url"
+              reference={this.gameTrailer}
+            ></Input>
+          </div>
         </div>
 
         <div className="important">
           <h3>Important: Only use images with a 16:9 aspect ratio</h3>
         </div>
 
-        <div className="image_url_box_art">
-          <label htmlFor="PostGameForm_image_url_box_art">Cover Art</label>
-          <Input
-            required
-            name="image_url_box_art"
-            id="PostGameForm_image_url_box_art"
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_image_url_box_art">Cover Art</label>
+          </div>
+          <div className="input-container">
+            <Input
+              required
+              name="image_url_box_art"
+              id="PostGameForm_image_url_box_art"
+            ></Input>
+          </div>
         </div>
 
-        <div className="image_url_two">
-          <label htmlFor="PostGameForm_image_url_two">Screen Shot 1</label>
-          <Input name="image_url_two" id="PostGameForm_image_url_two"></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_image_url_two">Screen Shot 1</label>
+          </div>
+          <div className="input-container">
+            <Input name="image_url_two" id="PostGameForm_image_url_two"></Input>
+          </div>
         </div>
 
-        <div className="image_url_three">
-          <label htmlFor="PostGameForm_image_url_three">Screen Shot 2</label>
-          <Input
-            name="image_url_three"
-            id="PostGameForm_image_url_three"
-          ></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_image_url_three">Screen Shot 2</label>
+          </div>
+          <div className="input-container">
+            <Input
+              name="image_url_three"
+              id="PostGameForm_image_url_three"
+            ></Input>
+          </div>
         </div>
 
-        <div className="image_url_four">
-          <label htmlFor="PostGameForm_image_url_four">Screen Shot 3</label>
-          <Input name="image_url_four" id="PostGameForm_image_url_four"></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_image_url_four">Screen Shot 3</label>
+          </div>
+          <div className="input-container">
+            <Input
+              name="image_url_four"
+              id="PostGameForm_image_url_four"
+            ></Input>
+          </div>
         </div>
 
-        <div className="image_url_five">
-          <label htmlFor="PostGameForm_image_url_five">Screen Shot 4</label>
-          <Input name="image_url_five" id="PostGameForm_image_url_five"></Input>
+        <div className="form-container">
+          <div className="label-container">
+            <label htmlFor="PostGameForm_image_url_five">Screen Shot 4</label>
+          </div>
+          <div className="input-container">
+            <Input
+              name="image_url_five"
+              id="PostGameForm_image_url_five"
+            ></Input>
+          </div>
         </div>
 
         <Button type="submit">Submit Game</Button>

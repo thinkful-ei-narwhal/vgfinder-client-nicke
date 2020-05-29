@@ -6,20 +6,25 @@ exports[`GameCarousel component renders the GameCarousel given GamePage props 1`
     className="slideshow-container"
   >
     <div
-      className="showSlide fade"
+      className="showSlide fade container"
       key="0"
+      style={
+        Object {
+          "backgroundColor": "black",
+          "backgroundImage": "url(https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500)",
+          "backgroundPosition": "center",
+          "backgroundRepeat": "no-repeat",
+          "backgroundSize": "contain",
+        }
+      }
     >
       <div
-        className="numbertext"
+        className="numbertext "
       >
         1
          / 
         1
       </div>
-      <img
-        alt="undefined thumbnail"
-        src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-      />
     </div>
   </div>
   <br />
@@ -40,50 +45,58 @@ exports[`GameCarousel component renders the GameCarousel given GamesHomePage pro
   <div
     className="slideshow-container"
   >
-    <div
-      className="showSlide fade"
+    <Link
       key="0"
+      to="/games/2"
     >
       <div
-        className="numbertext"
+        className="showSlide fade container"
+        style={
+          Object {
+            "backgroundColor": "black",
+            "backgroundImage": "url(https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500)",
+            "backgroundPosition": "center",
+            "backgroundRepeat": "no-repeat",
+            "backgroundSize": "contain",
+          }
+        }
       >
-        1
-         / 
-        2
+        <div
+          className="numbertext"
+        >
+          1
+           / 
+          2
+        </div>
       </div>
-      <Link
-        to="/games/2"
-      >
-         
-        <img
-          alt="testGame thumbnail"
-          src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-        />
-      </Link>
-    </div>
-    <div
-      className="mySlides fade"
+    </Link>
+    <Link
       key="1"
+      to="/games/3"
     >
       <div
-        className="numbertext"
+        className="mySlides fade container"
+        style={
+          Object {
+            "backgroundColor": "black",
+            "backgroundImage": "url(https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500)",
+            "backgroundPosition": "center",
+            "backgroundRepeat": "no-repeat",
+            "backgroundSize": "contain",
+          }
+        }
       >
-        2
-         / 
-        2
+        <div
+          className="numbertext"
+        >
+          2
+           / 
+          2
+        </div>
       </div>
-      <Link
-        to="/games/3"
-      >
-         
-        <img
-          alt="testGame thumbnail"
-          src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
-        />
-      </Link>
-    </div>
+    </Link>
     <a
-      className="next"
+      className="next game-carousel-button"
       href="#0"
       onClick={[Function]}
     >

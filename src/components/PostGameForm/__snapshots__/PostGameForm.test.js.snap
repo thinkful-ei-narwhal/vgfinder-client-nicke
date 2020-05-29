@@ -9,112 +9,136 @@ exports[`Post game component renders the complete form 1`] = `
     role="alert"
   />
   <div
-    className="title"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_title"
+    <div
+      className="label-container"
     >
-      Title
-    </label>
-    <Input
-      id="PostGameForm_title"
-      name="title"
-      required={true}
-    />
+      <label
+        htmlFor="PostGameForm_title"
+      >
+        Title
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_title"
+        name="title"
+        required={true}
+      />
+    </div>
   </div>
   <div
-    className="description"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_description"
+    <div
+      className="label-container"
     >
-      Description
-    </label>
-    <Textarea
-      id="PostGameForm_description"
-      name="description"
-      required={true}
-    />
+      <label
+        htmlFor="PostGameForm_description"
+      >
+        Description
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Textarea
+        id="PostGameForm_description"
+        name="description"
+        required={true}
+      />
+    </div>
   </div>
   <div
-    className="genre"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_genre"
+    <div
+      className="label-container"
     >
-      Genre
-    </label>
-    <Select
-      id="PostGameForm_genre"
-      name="genre"
-      required={true}
+      <label
+        htmlFor="PostGameForm_genre"
+      >
+        Genre
+      </label>
+    </div>
+    <div
+      className="input-container"
     >
-      <Option
-        value="Action"
+      <Select
+        id="PostGameForm_genre"
+        name="genre"
+        required={true}
       >
-        Action
-      </Option>
-      <Option
-        value="Adventure"
-      >
-        Adventure
-      </Option>
-      <Option
-        value="Simulation"
-      >
-        Simulation
-      </Option>
-      <Option
-        value="Strategy"
-      >
-        Strategy
-      </Option>
-      <Option
-        value="RPG"
-      >
-        RPG
-      </Option>
-      <Option
-        value="Sports"
-      >
-        Sports
-      </Option>
-      <Option
-        value="Horror"
-      >
-        Horror
-      </Option>
-      <Option
-        value="FPS"
-      >
-        FPS
-      </Option>
-      <Option
-        value="Third Person"
-      >
-        Third Person
-      </Option>
-      <Option
-        value="Point And Click"
-      >
-        Point And Click
-      </Option>
-      <Option
-        value="Mystery"
-      >
-        Mystery
-      </Option>
-      <Option
-        value="RTS"
-      >
-        RTS
-      </Option>
-      <Option
-        value="Puzzle"
-      >
-        Puzzle
-      </Option>
-    </Select>
+        <Option
+          value="Action"
+        >
+          Action
+        </Option>
+        <Option
+          value="Adventure"
+        >
+          Adventure
+        </Option>
+        <Option
+          value="Simulation"
+        >
+          Simulation
+        </Option>
+        <Option
+          value="Strategy"
+        >
+          Strategy
+        </Option>
+        <Option
+          value="RPG"
+        >
+          RPG
+        </Option>
+        <Option
+          value="Sports"
+        >
+          Sports
+        </Option>
+        <Option
+          value="Horror"
+        >
+          Horror
+        </Option>
+        <Option
+          value="FPS"
+        >
+          FPS
+        </Option>
+        <Option
+          value="Third Person"
+        >
+          Third Person
+        </Option>
+        <Option
+          value="Point And Click"
+        >
+          Point And Click
+        </Option>
+        <Option
+          value="Mystery"
+        >
+          Mystery
+        </Option>
+        <Option
+          value="RTS"
+        >
+          RTS
+        </Option>
+        <Option
+          value="Puzzle"
+        >
+          Puzzle
+        </Option>
+      </Select>
+    </div>
   </div>
   <div
     className="rating"
@@ -144,156 +168,70 @@ exports[`Post game component renders the complete form 1`] = `
     </div>
   </div>
   <div
-    className="YearNavigation release_date"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_release_date"
+    <div
+      className="label-container YearNavigation release_date"
     >
-      Release Date
-    </label>
-    <br />
-    <t
-      canChangeMonth={true}
-      captionElement={[Function]}
-      classNames={
-        Object {
-          "body": "DayPicker-Body",
-          "caption": "DayPicker-Caption",
-          "container": "DayPicker",
-          "day": "DayPicker-Day",
-          "disabled": "disabled",
-          "footer": "DayPicker-Footer",
-          "interactionDisabled": "DayPicker--interactionDisabled",
-          "month": "DayPicker-Month",
-          "months": "DayPicker-Months",
-          "navBar": "DayPicker-NavBar",
-          "navButtonInteractionDisabled": "DayPicker-NavButton--interactionDisabled",
-          "navButtonNext": "DayPicker-NavButton DayPicker-NavButton--next",
-          "navButtonPrev": "DayPicker-NavButton DayPicker-NavButton--prev",
-          "outside": "outside",
-          "selected": "selected",
-          "today": "today",
-          "todayButton": "DayPicker-TodayButton",
-          "week": "DayPicker-Week",
-          "weekNumber": "DayPicker-WeekNumber",
-          "weekday": "DayPicker-Weekday",
-          "weekdays": "DayPicker-Weekdays",
-          "weekdaysRow": "DayPicker-WeekdaysRow",
-          "wrapper": "DayPicker-wrapper",
-        }
-      }
-      enableOutsideDaysClick={true}
-      fixedWeeks={false}
-      fromMonth={1970-12-01T05:00:00.000Z}
-      id="PostGameForm_release_date"
-      labels={
-        Object {
-          "nextMonth": "Next Month",
-          "previousMonth": "Previous Month",
-        }
-      }
-      locale="en"
-      localeUtils={
-        Object {
-          "default": Object {
-            "formatDay": [Function],
-            "formatMonthTitle": [Function],
-            "formatWeekdayLong": [Function],
-            "formatWeekdayShort": [Function],
-            "getFirstDayOfWeek": [Function],
-            "getMonths": [Function],
-          },
-          "formatDay": [Function],
-          "formatMonthTitle": [Function],
-          "formatWeekdayLong": [Function],
-          "formatWeekdayShort": [Function],
-          "getFirstDayOfWeek": [Function],
-          "getMonths": [Function],
-        }
-      }
-      name="release_date"
-      navbarElement={
-        <t
-          classNames={
-            Object {
-              "body": "DayPicker-Body",
-              "caption": "DayPicker-Caption",
-              "container": "DayPicker",
-              "day": "DayPicker-Day",
-              "disabled": "disabled",
-              "footer": "DayPicker-Footer",
-              "interactionDisabled": "DayPicker--interactionDisabled",
-              "month": "DayPicker-Month",
-              "months": "DayPicker-Months",
-              "navBar": "DayPicker-NavBar",
-              "navButtonInteractionDisabled": "DayPicker-NavButton--interactionDisabled",
-              "navButtonNext": "DayPicker-NavButton DayPicker-NavButton--next",
-              "navButtonPrev": "DayPicker-NavButton DayPicker-NavButton--prev",
-              "outside": "outside",
-              "selected": "selected",
-              "today": "today",
-              "todayButton": "DayPicker-TodayButton",
-              "week": "DayPicker-Week",
-              "weekNumber": "DayPicker-WeekNumber",
-              "weekday": "DayPicker-Weekday",
-              "weekdays": "DayPicker-Weekdays",
-              "weekdaysRow": "DayPicker-WeekdaysRow",
-              "wrapper": "DayPicker-wrapper",
-            }
-          }
-          dir="ltr"
-          labels={
-            Object {
-              "nextMonth": "Next Month",
-              "previousMonth": "Previous Month",
-            }
-          }
-          showNextButton={true}
-          showPreviousButton={true}
-        />
-      }
-      numberOfMonths={1}
-      onDayClick={[Function]}
-      pagedNavigation={false}
-      renderDay={[Function]}
-      renderWeek={[Function]}
-      reverseMonths={false}
-      selectedDays={null}
-      showOutsideDays={false}
-      showWeekDays={true}
-      showWeekNumbers={false}
-      tabIndex={0}
-      toMonth={2020-01-01T05:00:00.000Z}
-      weekdayElement={<t />}
-    />
+      <label
+        htmlFor="release_date"
+      >
+        Release Date
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        name="release_date"
+        required={true}
+        type="date"
+      />
+    </div>
   </div>
   <div
-    className="developer"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_developer"
+    <div
+      className="label-container"
     >
-      Developer
-    </label>
-    <Input
-      id="PostGameForm_developer"
-      name="developer"
-      required={true}
-    />
+      <label
+        htmlFor="PostGameForm_developer"
+      >
+        Developer
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_developer"
+        name="developer"
+        required={true}
+      />
+    </div>
   </div>
   <div
-    className="trailer_url"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_trailer_url"
+    <div
+      className="label-container"
     >
-      Trailer Youtube Url
-    </label>
-    <Input
-      id="PostGameForm_trailer_url"
-      name="trailer_url"
-      required={true}
-    />
+      <label
+        htmlFor="PostGameForm_trailer_url"
+      >
+        Youtube Url
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_trailer_url"
+        name="trailer_url"
+        required={true}
+      />
+    </div>
   </div>
   <div
     className="important"
@@ -303,70 +241,110 @@ exports[`Post game component renders the complete form 1`] = `
     </h3>
   </div>
   <div
-    className="image_url_box_art"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_image_url_box_art"
+    <div
+      className="label-container"
     >
-      Cover Art
-    </label>
-    <Input
-      id="PostGameForm_image_url_box_art"
-      name="image_url_box_art"
-      required={true}
-    />
+      <label
+        htmlFor="PostGameForm_image_url_box_art"
+      >
+        Cover Art
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_image_url_box_art"
+        name="image_url_box_art"
+        required={true}
+      />
+    </div>
   </div>
   <div
-    className="image_url_two"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_image_url_two"
+    <div
+      className="label-container"
     >
-      Screen Shot 1
-    </label>
-    <Input
-      id="PostGameForm_image_url_two"
-      name="image_url_two"
-    />
+      <label
+        htmlFor="PostGameForm_image_url_two"
+      >
+        Screen Shot 1
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_image_url_two"
+        name="image_url_two"
+      />
+    </div>
   </div>
   <div
-    className="image_url_three"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_image_url_three"
+    <div
+      className="label-container"
     >
-      Screen Shot 2
-    </label>
-    <Input
-      id="PostGameForm_image_url_three"
-      name="image_url_three"
-    />
+      <label
+        htmlFor="PostGameForm_image_url_three"
+      >
+        Screen Shot 2
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_image_url_three"
+        name="image_url_three"
+      />
+    </div>
   </div>
   <div
-    className="image_url_four"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_image_url_four"
+    <div
+      className="label-container"
     >
-      Screen Shot 3
-    </label>
-    <Input
-      id="PostGameForm_image_url_four"
-      name="image_url_four"
-    />
+      <label
+        htmlFor="PostGameForm_image_url_four"
+      >
+        Screen Shot 3
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_image_url_four"
+        name="image_url_four"
+      />
+    </div>
   </div>
   <div
-    className="image_url_five"
+    className="form-container"
   >
-    <label
-      htmlFor="PostGameForm_image_url_five"
+    <div
+      className="label-container"
     >
-      Screen Shot 4
-    </label>
-    <Input
-      id="PostGameForm_image_url_five"
-      name="image_url_five"
-    />
+      <label
+        htmlFor="PostGameForm_image_url_five"
+      >
+        Screen Shot 4
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="PostGameForm_image_url_five"
+        name="image_url_five"
+      />
+    </div>
   </div>
   <Button
     type="submit"

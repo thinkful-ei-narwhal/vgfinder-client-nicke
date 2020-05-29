@@ -9,33 +9,49 @@ exports[`LoginForm component renders a form.Login by default 1`] = `
     role="alert"
   />
   <div
-    className="user_name"
+    className="form-container"
   >
-    <label
-      htmlFor="LoginForm__user_name"
+    <div
+      className="label-container"
     >
-      User name
-    </label>
-    <Input
-      id="LoginForm__user_name"
-      name="user_name"
-      required={true}
-    />
+      <label
+        htmlFor="LoginForm__user_name"
+      >
+        User name
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="LoginForm__user_name"
+        name="user_name"
+        required={true}
+      />
+    </div>
   </div>
   <div
-    className="password"
+    className="form-container"
   >
-    <label
-      htmlFor="LoginForm__password"
+    <div
+      className="label-container"
     >
-      Password
-    </label>
-    <Input
-      id="LoginForm__password"
-      name="password"
-      required={true}
-      type="password"
-    />
+      <label
+        htmlFor="LoginForm__password"
+      >
+        Password
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="LoginForm__password"
+        name="password"
+        required={true}
+        type="password"
+      />
+    </div>
   </div>
   <Button
     type="submit"

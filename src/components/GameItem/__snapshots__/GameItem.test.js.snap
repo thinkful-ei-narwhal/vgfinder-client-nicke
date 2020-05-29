@@ -13,10 +13,17 @@ exports[`GameItem component renders a GameItem with supplied props 1`] = `
       <Link
         to="/games/1"
       >
-        <img
-          alt="Hollow Knight screenshot"
-          className="game-item-img"
-          src="https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500"
+        <div
+          className="container"
+          style={
+            Object {
+              "backgroundColor": "black",
+              "backgroundImage": "url(https://steamcdn-a.akamaihd.net/steam/apps/367520/capsule_616x353.jpg?t=1577747500)",
+              "backgroundPosition": "center",
+              "backgroundRepeat": "no-repeat",
+              "backgroundSize": "contain",
+            }
+          }
         />
       </Link>
     </div>

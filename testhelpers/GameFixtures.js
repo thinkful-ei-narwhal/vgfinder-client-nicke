@@ -6,6 +6,7 @@ const GameFixtures = {
       "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
     genre: "Adventure",
     rating: "4",
+    release_date: "2018-07-22",
     developer: "Team Cherry",
     trailer_url:
       "https://www.youtube.com/watch?v=UAO2urG23S4&ab_channel=TeamCherry",
@@ -24,6 +25,7 @@ const GameFixtures = {
         "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
       genre: "Adventure",
       rating: "4",
+      release_date: "2018-07-22",
       developer: "Team Cherry",
       trailer_url:
         "https://www.youtube.com/watch?v=UAO2urG23S4&ab_channel=TeamCherry",
@@ -41,6 +43,7 @@ const GameFixtures = {
         "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
       genre: "Adventure",
       rating: "4",
+      release_date: "2018-07-22",
       developer: "Team Cherry",
       trailer_url:
         "https://www.youtube.com/watch?v=UAO2urG23S4&ab_channel=TeamCherry",

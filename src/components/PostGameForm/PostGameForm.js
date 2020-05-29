@@ -3,48 +3,9 @@ import { Button, Input, Textarea, Select, Option } from "../Utils/Utils";
 import "./PostGameForm.css";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
-import DayPicker from "react-day-picker";
-import "react-day-picker/lib/style.css";
 import GamesApiService from "./../../services/games-api-service";
 import Alert from "./../Alert/Alert";
 import GamesListContext from "../../contexts/GamesListContext";
-
-const currentYear = new Date().getFullYear();
-const fromMonth = new Date(1970, 11);
-const toMonth = new Date(currentYear, 0);
-
-function YearMonthForm({ date, localeUtils, onChange }) {
-  const months = localeUtils.getMonths();
-
-  const years = [];
-  for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
-    years.push(i);
-  }
-
-  const handleChange = function handleChange(e) {
-    const { year, month } = e.target.form;
-    onChange(new Date(year.value, month.value));
-  };
-
-  return (
-    <div className="DayPicker-Caption">
-      <select name="month" onChange={handleChange} value={date.getMonth()}>
-        {months.map((month, i) => (
-          <option key={month} value={i}>
-            {month}
-          </option>
-        ))}
-      </select>
-      <select name="year" onChange={handleChange} value={date.getFullYear()}>
-        {years.map((year) => (
-          <option key={year} value={year}>
-            {year}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-}
 
 export default class PostGameForm extends Component {
   static contextType = GamesListContext;
@@ -53,7 +14,6 @@ export default class PostGameForm extends Component {
     super(props, context);
     this.state = {
       rating: 0,
-      month: toMonth,
       selectedDay: null,
       error: null,
     };
@@ -61,17 +21,6 @@ export default class PostGameForm extends Component {
 
   handleErrorClick = () => {
     this.setState({ error: null });
-  };
-
-  handleYearMonthChange = (month) => {
-    console.log("TESTING", month);
-    this.setState({ month });
-  };
-
-  handleDayClick = (day) => {
-    this.setState({
-      selectedDay: day,
-    });
   };
 
   handleRatingOnChange = (value) => {

@@ -7,12 +7,12 @@ import { Button } from "./../Utils/Utils";
 export default class GameInfo extends Component {
   render() {
     function myDateParse(d) {
-      const date = d.slice(0,10).split('-');
+      const date = d.slice(0, 10).split("-");
       const dateOrganized = [];
-      dateOrganized.push(date[1])
-      dateOrganized.push(date[2])
-      dateOrganized.push(date[0])
-      return dateOrganized.join('/');
+      dateOrganized.push(date[1]);
+      dateOrganized.push(date[2]);
+      dateOrganized.push(date[0]);
+      return dateOrganized.join("/");
     }
     const {
       description,

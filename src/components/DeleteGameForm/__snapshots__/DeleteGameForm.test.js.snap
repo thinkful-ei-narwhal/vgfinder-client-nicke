@@ -9,20 +9,28 @@ exports[`DeleteGameForm component renders a form.DeleteGameForm by default 1`] =
     role="alert"
   />
   <div
-    className="title"
+    className="form-container"
   >
-    <label
-      htmlFor="DeleteGameForm_title"
+    <div
+      className="label-container"
     >
-      Title
-    </label>
-    <Input
-      id="DeleteGameForm_title"
-      name="title"
-      onChange={[Function]}
-      required={true}
-      value=""
-    />
+      <label
+        htmlFor="DeleteGameForm_title"
+      >
+        Title
+      </label>
+    </div>
+    <div
+      className="input-container"
+    >
+      <Input
+        id="DeleteGameForm_title"
+        name="title"
+        onChange={[Function]}
+        required={true}
+        value=""
+      />
+    </div>
   </div>
   <Button
     disabled={true}

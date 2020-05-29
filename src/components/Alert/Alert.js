@@ -17,6 +17,12 @@ export default class Alert extends Component {
     }, 2800);
   }
 
+  componentWillUnmount() {
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
   render() {
     return <ShowAlert message={this.props.message} show={this.state.show} />;
   }

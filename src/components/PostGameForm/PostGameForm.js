@@ -51,29 +51,28 @@ export default class PostGameForm extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.handleYearMonthChange = this.handleYearMonthChange.bind(this);
     this.state = {
       rating: 0,
       month: toMonth,
       selectedDay: null,
       error: null,
     };
-    this.handleDayClick = this.handleDayClick.bind(this);
   }
 
   handleErrorClick = () => {
     this.setState({ error: null });
   };
 
-  handleYearMonthChange(month) {
+  handleYearMonthChange = (month) => {
+    console.log("TESTING", month);
     this.setState({ month });
-  }
+  };
 
-  handleDayClick(day) {
+  handleDayClick = (day) => {
     this.setState({
       selectedDay: day,
     });
-  }
+  };
 
   handleRatingOnChange = (value) => {
     this.setState({
@@ -90,6 +89,7 @@ export default class PostGameForm extends Component {
       title,
       description,
       genre,
+      release_date,
       developer,
       trailer_url,
       image_url_box_art,
@@ -113,7 +113,7 @@ export default class PostGameForm extends Component {
       return;
     }
 
-    if (!this.state.selectedDay) {
+    if (!release_date.value) {
       this.setState({ error: "Supply a release date" });
       return;
     }
@@ -129,24 +129,43 @@ export default class PostGameForm extends Component {
     }
 
     //url parsing for image
-    if (!image_url_box_art.value.includes(".com")) {
+    if (
+      !image_url_box_art.value.includes(".com") &&
+      !image_url_box_art.value.includes(".net")
+    ) {
       this.setState({ error: "Supply a url for the box art!" });
       return;
     }
 
-    if (image_url_two.value && !image_url_two.value.includes(".com")) {
+    if (
+      image_url_two.value &&
+      !image_url_two.value.includes(".com") &&
+      !image_url_two.value.includes(".net")
+    ) {
       this.setState({ error: "Supply a url image for screenshot 1" });
       return;
     }
-    if (image_url_three.value && !image_url_three.value.includes(".com")) {
+    if (
+      image_url_three.value &&
+      !image_url_three.value.includes(".com") &&
+      !image_url_three.value.includes(".net")
+    ) {
       this.setState({ error: "Supply a url image for screenshot 2" });
       return;
     }
-    if (image_url_four.value && !image_url_four.value.includes(".com")) {
+    if (
+      image_url_four.value &&
+      !image_url_four.value.includes(".com") &&
+      !image_url_four.value.includes(".net")
+    ) {
       this.setState({ error: "Supply a url image for screenshot 3" });
       return;
     }
-    if (image_url_five.value && !image_url_five.value.includes(".com")) {
+    if (
+      image_url_five.value &&
+      !image_url_five.value.includes(".com") &&
+      !image_url_five.value.includes(".net")
+    ) {
       this.setState({ error: "Supply a url image for screenshot 4" });
       return;
     }
@@ -156,7 +175,7 @@ export default class PostGameForm extends Component {
       description.value,
       genre.value,
       this.state.rating,
-      this.state.selectedDay,
+      release_date.value,
       developer.value,
       trailer_url.value,
       image_url_box_art.value,
@@ -166,12 +185,12 @@ export default class PostGameForm extends Component {
       image_url_five.value
     )
       .then((res) => {
+        console.log("TESTING", release_date.value);
+
         //flush and reset state
         target.reset();
         this.setState({
           rating: 0,
-          month: toMonth,
-          selectedDay: null,
           error: "Your game has been posted!",
         });
 
@@ -261,24 +280,13 @@ export default class PostGameForm extends Component {
           </div>
         </div>
 
-        <div className="YearNavigation release_date">
-          <label htmlFor="PostGameForm_release_date">Release Date</label>
-          <br />
-          <DayPicker
-            name="release_date"
-            id="PostGameForm_release_date"
-            selectedDays={this.state.selectedDay}
-            onDayClick={this.handleDayClick}
-            fromMonth={fromMonth}
-            toMonth={toMonth}
-            captionElement={({ date, localeUtils }) => (
-              <YearMonthForm
-                date={date}
-                localeUtils={localeUtils}
-                onChange={this.handleYearMonthChange}
-              />
-            )}
-          />
+        <div className="form-container">
+          <div className="label-container YearNavigation release_date">
+            <label htmlFor="release_date">Release Date</label>
+          </div>
+          <div className="input-container">
+            <Input type="date" required name="release_date" />
+          </div>
         </div>
 
         <div className="form-container">
